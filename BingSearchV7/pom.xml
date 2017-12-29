@@ -76,50 +76,36 @@
       <groupId>com.microsoft.azure.cognitiveservices</groupId>
       <artifactId>azure-cognitiveservices-entitysearch</artifactId>
       <version>0.0.1-beta-SNAPSHOT</version>
-      <scope>system</scope>
-      <systemPath>/Users/alvab/Documents/Projects/Microsoft/azure-sdk-for-java/cognitiveservices/azure-entitysearch/target/azure-cognitiveservices-entitysearch-0.0.1-beta-SNAPSHOT.jar</systemPath>
     </dependency>
     <dependency>
       <groupId>com.microsoft.azure.cognitiveservices</groupId>
       <artifactId>azure-cognitiveservices-websearch</artifactId>
       <version>0.0.1-beta-SNAPSHOT</version>
-      <scope>system</scope>
-      <systemPath>/Users/alvab/Documents/Projects/Microsoft/azure-sdk-for-java/cognitiveservices/azure-websearch/target/azure-cognitiveservices-websearch-0.0.1-beta-SNAPSHOT.jar</systemPath>
     </dependency>
     <dependency>
       <groupId>com.microsoft.azure.cognitiveservices</groupId>
       <artifactId>azure-cognitiveservices-spellcheck</artifactId>
       <version>0.0.1-beta-SNAPSHOT</version>
-      <scope>system</scope>
-      <systemPath>/Users/alvab/Documents/Projects/Microsoft/azure-sdk-for-java/cognitiveservices/azure-spellcheck/target/azure-cognitiveservices-spellcheck-0.0.1-beta-SNAPSHOT.jar</systemPath>
     </dependency>
     <dependency>
       <groupId>com.microsoft.azure.cognitiveservices</groupId>
       <artifactId>azure-cognitiveservices-videosearch</artifactId>
       <version>0.0.1-beta-SNAPSHOT</version>
-      <scope>system</scope>
-      <systemPath>/Users/alvab/Documents/Projects/Microsoft/azure-sdk-for-java/cognitiveservices/azure-videosearch/target/azure-cognitiveservices-videosearch-0.0.1-beta-SNAPSHOT.jar</systemPath>
     </dependency>
     <dependency>
       <groupId>com.microsoft.azure.cognitiveservices</groupId>
       <artifactId>azure-cognitiveservices-imagesearch</artifactId>
       <version>0.0.1-beta-SNAPSHOT</version>
-      <scope>system</scope>
-      <systemPath>/Users/alvab/Documents/Projects/Microsoft/azure-sdk-for-java/cognitiveservices/azure-imagesearch/target/azure-cognitiveservices-imagesearch-0.0.1-beta-SNAPSHOT.jar</systemPath>
     </dependency>
     <dependency>
       <groupId>com.microsoft.azure.cognitiveservices</groupId>
       <artifactId>azure-cognitiveservices-customsearch</artifactId>
       <version>0.0.1-beta-SNAPSHOT</version>
-      <scope>system</scope>
-      <systemPath>/Users/alvab/Documents/Projects/Microsoft/azure-sdk-for-java/cognitiveservices/azure-customsearch/target/azure-cognitiveservices-customsearch-0.0.1-beta-SNAPSHOT.jar</systemPath>
     </dependency>
     <dependency>
       <groupId>com.microsoft.azure.cognitiveservices</groupId>
       <artifactId>azure-cognitiveservices-newssearch</artifactId>
       <version>0.0.1-beta-SNAPSHOT</version>
-      <scope>system</scope>
-      <systemPath>/Users/alvab/Documents/Projects/Microsoft/azure-sdk-for-java/cognitiveservices/azure-newssearch/target/azure-cognitiveservices-newssearch-0.0.1-beta-SNAPSHOT.jar</systemPath>
     </dependency>
   </dependencies>
 </project>
