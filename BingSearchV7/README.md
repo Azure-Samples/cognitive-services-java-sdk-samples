@@ -6,13 +6,13 @@ These samples will show you how to get up and running using the SDKs for various
 
 This project framework provides examples for the following services:
 
-* Using the **Bing Custom Search SDK** \[[individual package](http://linktopackage)\]\[[complete package](http://linktopackage)\] for the [Entity Search API](https://azure.microsoft.com/en-us/services/cognitive-services/bing-entity-search-api/)
-* Using the **Bing Entity Search SDK** \[[individual package](http://linktopackage)\]\[[complete package](http://linktopackage)\] for the [Web Search API](https://azure.microsoft.com/en-us/services/cognitive-services/bing-web-search-api/)
-* Using the **Bing Image Search SDK** \[[individual package](http://linktopackage)\]\[[complete package](http://linktopackage)\] for the [Web Search API](https://azure.microsoft.com/en-us/services/cognitive-services/bing-web-search-api/)
-* Using the **Bing News Search SDK** \[[individual package](http://linktopackage)\]\[[complete package](http://linktopackage)\] for the [Web Search API](https://azure.microsoft.com/en-us/services/cognitive-services/bing-web-search-api/)
-* Using the **Bing Spell CheckSDK** \[[individual package](http://linktopackage)\]\[[complete package](http://linktopackage)\] for the [Web Search API](https://azure.microsoft.com/en-us/services/cognitive-services/bing-web-search-api/)
-* Using the **Bing Video Search SDK** \[[individual package](http://linktopackage)\]\[[complete package](http://linktopackage)\] for the [Web Search API](https://azure.microsoft.com/en-us/services/cognitive-services/bing-web-search-api/)
-* Using the **Bing Web Search SDK** \[[individual package](http://linktopackage)\]\[[complete package](http://linktopackage)\] for the [Web Search API](https://azure.microsoft.com/en-us/services/cognitive-services/bing-web-search-api/)
+* Using the **Bing Custom Search SDK** for the [Custom Search API](https://azure.microsoft.com/en-us/services/cognitive-services/)
+* Using the **Bing Entity Search SDK** for the [Entity Search API](https://azure.microsoft.com/en-us/services/cognitive-services/)
+* Using the **Bing Image Search SDK** for the [Image Search API](https://azure.microsoft.com/en-us/services/cognitive-services/)
+* Using the **Bing News Search SDK** for the [News Search API](https://azure.microsoft.com/en-us/services/cognitive-services/)
+* Using the **Bing Spell Check SDK** for the [Spell Check API](https://azure.microsoft.com/en-us/services/cognitive-services/)
+* Using the **Bing Video Search SDK** for the [Video Search API](https://azure.microsoft.com/en-us/services/cognitive-services/)
+* Using the **Bing Web Search SDK** for the [Web Search API](https://azure.microsoft.com/en-us/services/cognitive-services/)
 
 
 ## Getting Started
