@@ -224,7 +224,7 @@ public final class WebSearchSamples {
             System.out.println("Searched for Query# \" Microsoft \" with response filters \"news\"");
 
             //News
-            if (webData.news().value().size() > 0)
+            if (webData.news() != null && webData.news().value().size() > 0)
             {
                 // find the first news result
                 NewsArticle firstNewsResult = webData.news().value().get(0);
