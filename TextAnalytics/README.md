@@ -1,7 +1,7 @@
-# Quickstart for Text Analytics API with C# 
+# Quickstart for Text Analytics API with Java
 <a name="HOLTop"></a>
 
-This article shows you how to detect language, analyze sentiment, and extract key phrases using the [Text Analytics APIs](//go.microsoft.com/fwlink/?LinkID=759711) with C#. The code was written to work on a .Net Core application, with minimal references to external libraries, so you could also run it on Linux or MacOS.
+This article shows you how to detect language, analyze sentiment, and extract key phrases using the [Text Analytics APIs](//go.microsoft.com/fwlink/?LinkID=759711) with Java. 
 
 Refer to the [API definitions](//go.microsoft.com/fwlink/?LinkID=759346) for technical documentation for the APIs.
 
@@ -9,7 +9,7 @@ Refer to the [API definitions](//go.microsoft.com/fwlink/?LinkID=759346) for tec
 
 You must have a [Cognitive Services API account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) with **Text Analytics API**. You can use the **free tier for 5,000 transactions/month** to complete this quickstart.
 
-You must also have the [endpoint and access key](../How-tos/text-analytics-how-to-access-key.md) that was generated for you during sign up. 
+You must also have the [endpoint and access key](../How-tos/text-analytics-how-to-access-key.md) that was generated for you during sign up.
 
 
 ### Quickstart
