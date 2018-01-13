@@ -3,9 +3,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.microsoft.azure</groupId>
-  <artifactId>bing-search-java</artifactId>
+  <artifactId>azure-textanalytics-sample</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>SimpleBingSearch.java</name>
+  <name>Simple.java</name>
   <description></description>
   <url>https://github.com/Azure/bing-search-java</url>
   <repositories>
@@ -27,7 +27,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.4.0</version>
         <configuration>
-          <mainClass>com.microsoft.azure.bingsearch.samples.Samples</mainClass>
+          <mainClass>com.microsoft.azure.textanalytics.samples.Samples</mainClass>
         </configuration>
       </plugin>
       <plugin>
@@ -52,7 +52,7 @@
               </descriptorRefs>
               <archive>
                 <manifest>
-                  <mainClass>com.microsoft.azure.bingsearch.samples.EntitySearchSamples</mainClass>
+                  <mainClass>com.microsoft.azure.textanalytics.samples.Samples</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -74,37 +74,7 @@
     </dependency>
     <dependency>
       <groupId>com.microsoft.azure.cognitiveservices</groupId>
-      <artifactId>azure-cognitiveservices-entitysearch</artifactId>
-      <version>0.0.1-beta-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>com.microsoft.azure.cognitiveservices</groupId>
-      <artifactId>azure-cognitiveservices-websearch</artifactId>
-      <version>0.0.1-beta-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>com.microsoft.azure.cognitiveservices</groupId>
-      <artifactId>azure-cognitiveservices-spellcheck</artifactId>
-      <version>0.0.1-beta-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>com.microsoft.azure.cognitiveservices</groupId>
-      <artifactId>azure-cognitiveservices-videosearch</artifactId>
-      <version>0.0.1-beta-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>com.microsoft.azure.cognitiveservices</groupId>
-      <artifactId>azure-cognitiveservices-imagesearch</artifactId>
-      <version>0.0.1-beta-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>com.microsoft.azure.cognitiveservices</groupId>
-      <artifactId>azure-cognitiveservices-customsearch</artifactId>
-      <version>0.0.1-beta-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>com.microsoft.azure.cognitiveservices</groupId>
-      <artifactId>azure-cognitiveservices-newssearch</artifactId>
+      <artifactId>azure-cognitiveservices-language</artifactId>
       <version>0.0.1-beta-SNAPSHOT</version>
     </dependency>
   </dependencies>
