@@ -58,7 +58,7 @@ public final class VideoSearchSamples {
     }
 
     /**
-     * This will search videos for (Nasa CubeSat) then verify number of results and print out id,
+     * This will search videos for (SwiftKey) then verify number of results and print out id,
      * name and url of first video result
      * @param subscriptionKey cognitive services subscription key
      */
@@ -68,8 +68,8 @@ public final class VideoSearchSamples {
 
         try
         {
-            VideosInner videoResults = client.searchs().list("Nasa CubeSat");
-            System.out.println("Search videos for query \"Nasa CubeSat\"");
+            VideosInner videoResults = client.searchs().list("SwiftKey");
+            System.out.println("Search videos for query \"SwiftKey\"");
 
             if (videoResults == null)
             {
@@ -101,7 +101,7 @@ public final class VideoSearchSamples {
     }
 
     /**
-     * This will search videos for (Interstellar Trailer) that is free, short and 1080p resolution then verify
+     * This will search videos for (Bellevue Trailer) that is free, short and 1080p resolution then verify
      * number of results and print out id, name and url of first video result
      * @param subscriptionKey cognitive services subscription key
      */
@@ -111,9 +111,9 @@ public final class VideoSearchSamples {
 
         try
         {
-            VideosInner videoResults = client.searchs().list("Interstellar Trailer", "en-us", null, null, null, null, null,
+            VideosInner videoResults = client.searchs().list("Bellevue Trailer", "en-us", null, null, null, null, null,
                     Freshness.MONTH, null, VideoLength.SHORT, "en-us", null, VideoPricing.FREE, VideoResolution.HD1080P, null, null, null, null);
-            System.out.println("Search videos for query \"Interstellar Trailer\" that is free, short and 1080p resolution");
+            System.out.println("Search videos for query \"Bellevue Trailer\" that is free, short and 1080p resolution");
 
             if (videoResults == null)
             {
@@ -230,7 +230,7 @@ public final class VideoSearchSamples {
     }
 
     /**
-     * This will search videos for (Interstellar Trailer) and then search for detail information of the first video
+     * This will search videos for (Bellevue Trailer) and then search for detail information of the first video
      * @param subscriptionKey cognitive services subscription key
      */
     public static void VideoDetail(String subscriptionKey)
@@ -239,15 +239,15 @@ public final class VideoSearchSamples {
 
         try
         {
-            VideosInner videoResults = client.searchs().list("Interstellar Trailer");
+            VideosInner videoResults = client.searchs().list("Bellevue Trailer");
             if (videoResults.value().size() > 0)
             {
                 VideoObject firstVideo = videoResults.value().get(0);
                 List<VideoInsightModule> modules = new ArrayList<VideoInsightModule>();
                 modules.add(VideoInsightModule.ALL);
-                VideoDetailsInner videoDetail = client.details().list("Interstellar Trailer", null, null, null, null, null,
+                VideoDetailsInner videoDetail = client.details().list("Bellevue Trailer", null, null, null, null, null,
                         firstVideo.videoId(), modules, "en-us", null, null, null, null, null);
-                        //nc(query: "Interstellar Trailer", id: firstVideo.VideoId, modules: modules).Result;
+                        //nc(query: "Bellevue Trailer", id: firstVideo.VideoId, modules: modules).Result;
                 System.out.println(
                         String.format("Search detail for video id={firstVideo.VideoId}, name=%s", firstVideo.name()));
 
