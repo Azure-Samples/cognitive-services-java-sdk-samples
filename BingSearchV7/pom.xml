@@ -8,18 +8,6 @@
   <name>SimpleBingSearch.java</name>
   <description></description>
   <url>https://github.com/Azure/bing-search-java</url>
-  <repositories>
-  <repository>
-    <id>ossrh</id>
-    <name>Sonatype Snapshots</name>
-    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-    <layout>default</layout>
-    <snapshots>
-      <enabled>true</enabled>
-      <updatePolicy>always</updatePolicy>
-    </snapshots>
-  </repository>
-  </repositories>
   <build>
     <plugins>
       <plugin>
@@ -75,37 +63,37 @@
     <dependency>
       <groupId>com.microsoft.azure.cognitiveservices</groupId>
       <artifactId>azure-cognitiveservices-entitysearch</artifactId>
-      <version>0.0.1-beta-SNAPSHOT</version>
+      <version>0.0.1-beta</version>
     </dependency>
     <dependency>
       <groupId>com.microsoft.azure.cognitiveservices</groupId>
       <artifactId>azure-cognitiveservices-websearch</artifactId>
-      <version>0.0.1-beta-SNAPSHOT</version>
+      <version>0.0.1-beta</version>
     </dependency>
     <dependency>
       <groupId>com.microsoft.azure.cognitiveservices</groupId>
       <artifactId>azure-cognitiveservices-spellcheck</artifactId>
-      <version>0.0.1-beta-SNAPSHOT</version>
+      <version>0.0.1-beta</version>
     </dependency>
     <dependency>
       <groupId>com.microsoft.azure.cognitiveservices</groupId>
       <artifactId>azure-cognitiveservices-videosearch</artifactId>
-      <version>0.0.1-beta-SNAPSHOT</version>
+      <version>0.0.1-beta</version>
     </dependency>
     <dependency>
       <groupId>com.microsoft.azure.cognitiveservices</groupId>
       <artifactId>azure-cognitiveservices-imagesearch</artifactId>
-      <version>0.0.1-beta-SNAPSHOT</version>
+      <version>0.0.1-beta</version>
     </dependency>
     <dependency>
       <groupId>com.microsoft.azure.cognitiveservices</groupId>
       <artifactId>azure-cognitiveservices-customsearch</artifactId>
-      <version>0.0.1-beta-SNAPSHOT</version>
+      <version>0.0.1-beta</version>
     </dependency>
     <dependency>
       <groupId>com.microsoft.azure.cognitiveservices</groupId>
       <artifactId>azure-cognitiveservices-newssearch</artifactId>
-      <version>0.0.1-beta-SNAPSHOT</version>
+      <version>0.0.1-beta</version>
     </dependency>
   </dependencies>
 </project>
