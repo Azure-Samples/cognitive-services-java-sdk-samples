@@ -53,7 +53,7 @@ public final class EntitySearchSamples {
     }
 
     /**
-     * This will look up a single entity (tom cruise) and print out a short description about them
+     * This will look up a single entity (Satya Nadella) and print out a short description about them
      * @param subscriptionKey cognitive services subscription key
      */
     public static void dominantEntityLookup(final String subscriptionKey)
@@ -62,7 +62,7 @@ public final class EntitySearchSamples {
         {
             EntitySearchAPIImpl client = getClient(subscriptionKey);
             SearchResponseInner entityData = client.entities().search(
-                    "tom cruise", null, null, null, null, null, null, "en-us", null, null, SafeSearch.STRICT, null);
+                    "satya nadella", null, null, null, null, null, null, "en-us", null, null, SafeSearch.STRICT, null);
 
             if (entityData.entities().value().size() > 0)
             {
@@ -71,7 +71,7 @@ public final class EntitySearchSamples {
                 Thing dominateEntry = null;
                 for(Thing thing : entrys) {
                     if(thing.entityPresentationInfo().entityScenario() == EntityScenario.DOMINANT_ENTITY) {
-                        System.out.println("Searched for \"Tom Cruise\" and found a dominant entity with this description:");
+                        System.out.println("Searched for \"Satya Nadella\" and found a dominant entity with this description:");
                         System.out.println(thing.description());
                         break;
                     }
@@ -79,7 +79,7 @@ public final class EntitySearchSamples {
 
                 if(dominateEntry == null)
                 {
-                     System.out.println("Couldn't find main entity tom cruise!");
+                     System.out.println("Couldn't find main entity Satya Nadella!");
                 }
             }
             else
@@ -112,7 +112,7 @@ public final class EntitySearchSamples {
                 List<Thing> disambigEntities = new ArrayList<Thing>();
                 for(Thing thing : entrys) {
                     if(thing.entityPresentationInfo().entityScenario() == EntityScenario.DOMINANT_ENTITY) {
-                        System.out.println("Searched for \"Tom Cruise\" and found a dominant entity with this description:");
+                        System.out.println("Searched for \"Satya Nadella\" and found a dominant entity with this description:");
                         System.out.println(String.format("Searched for \"harry potter\" and found a dominant entity with type hint \"%s\" with this description:",
                                 thing.entityPresentationInfo().entityTypeDisplayHint()));
                         System.out.println(thing.description());
@@ -120,7 +120,7 @@ public final class EntitySearchSamples {
 
                     if(thing.entityPresentationInfo().entityScenario() == EntityScenario.DISAMBIGUATION_ITEM) {
                         disambigEntities.add(thing);
-                        System.out.println("Searched for \"Tom Cruise\" and found a dominant entity with this description:");
+                        System.out.println("Searched for \"Satya Nadella\" and found a dominant entity with this description:");
                         System.out.println(thing.description());
                     }
 
