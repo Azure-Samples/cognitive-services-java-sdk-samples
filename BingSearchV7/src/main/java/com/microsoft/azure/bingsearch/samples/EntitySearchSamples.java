@@ -162,27 +162,27 @@ public final class EntitySearchSamples {
     }
 
     /**
-     * This will look up a single restaurant (john howie bellevue) and print out its phone number
+     * This will look up a single store (Microsoft Store) and print out its phone number
      * @param subscriptionKey cognitive services subscription key
      */
-    public static void restaurantLookup(String subscriptionKey)
+    public static void storeLookup(String subscriptionKey)
     {
         try
         {
             EntitySearchAPIImpl client = getClient(subscriptionKey);
             SearchResponseInner entityData = client.entities().search(
-                    "John Howie Bellevue", null, null, null, null, null, null, "en-us", null, null, SafeSearch.STRICT, null);
+                    "Microsoft Store", null, null, null, null, null, null, "en-us", null, null, SafeSearch.STRICT, null);
 
             if (entityData.places() != null && entityData.places().value().size() > 0)
             {
                 // Some local entities will be places, others won't be. Depending on the data you want, try to cast to the appropriate schema
-                // In this case, the item being returned is technically a Restaurant, but the Place schema has the data we want (telephone)
-                Place restaurant = (Place)entityData.places().value().get(0);
+                // In this case, the item being returned is technically a Store, but the Place schema has the data we want (telephone)
+                Place store = (Place)entityData.places().value().get(0);
 
-                if (restaurant != null)
+                if (store != null)
                 {
-                     System.out.println("Searched for \"John Howie Bellevue\" and found a restaurant with this phone number:");
-                     System.out.println(restaurant.telephone());
+                     System.out.println("Searched for \"Microsoft Store\" and found a store with this phone number:");
+                     System.out.println(store.telephone());
                 }
                 else
                 {

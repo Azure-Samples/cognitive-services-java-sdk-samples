@@ -31,7 +31,7 @@ public class Samples {
             //entity examples
             EntitySearchSamples.dominantEntityLookup(bingAPIKey);
             EntitySearchSamples.handlingDisambiguation(bingAPIKey);
-            EntitySearchSamples.restaurantLookup(bingAPIKey);
+            EntitySearchSamples.storeLookup(bingAPIKey);
             EntitySearchSamples.multipleRestaurantLookup(bingAPIKey);
             EntitySearchSamples.error(bingAPIKey);
 
