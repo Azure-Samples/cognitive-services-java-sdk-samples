@@ -31,7 +31,6 @@ public class Samples {
      */
     public static ContentModeratorClientImpl getClient(final String subscriptionKey) {
         return new ContentModeratorClientImpl(
-                "https://westus.api.cognitive.microsoft.com/vision/v1.0/",
                 new ServiceClientCredentials() {
                     @Override
                     public void applyCredentialsFilter(OkHttpClient.Builder builder) {
@@ -49,7 +48,7 @@ public class Samples {
                                     }
                                 });
                     }
-                });
+                }).withBaseUrl("https://westus.api.cognitive.microsoft.com");
     }
 
     static String readFileContents(String filePath) throws IOException {
@@ -74,11 +73,22 @@ public class Samples {
     public static void main(String[] args) {
         try {
             if(apiKey == null) {
-                apiKey = System.getenv("AZURE_COMPUTERVISION_API_KEY");
+                apiKey = System.getenv("AZURE_CONTENT_MODERATOR_API_KEY");
                 if(apiKey == null) {
-                    throw new Exception("Azure computer vision samples api key not found.");
+                    throw new Exception("Azure content moderator samples api key not found.");
                 }
             }
+
+            ContentModeratorClientImpl client  = Samples.getClient(apiKey);
+            ImageJobs.execute(client);
+            ImageList.execute(client);
+            //Please view sample and create required files before uncommenting.
+            //ImageModeration.execute(client);
+            ImageReviews.execute(client);
+            TermList.execute(client);
+            TextModeration.execute(client);
+            VideoReviews.execute(client);
+            VideoTranscriptReviews.execute(client);
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
