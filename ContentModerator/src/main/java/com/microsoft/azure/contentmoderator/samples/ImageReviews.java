@@ -112,12 +112,8 @@ public class ImageReviews {
         GetReviewDetails(client);
 
         System.out.println();
-        System.out.println("Perform manual reviews on the Content Moderator site.");
-        System.out.println("Then, press any key to continue.");
-        System.in.read();
-
-        System.out.println();
-        System.out.println("Waiting {latencyDelay} seconds for results to propigate.");
+        System.out.println(
+                String.format("Waiting %d seconds for results to propagate.", latencyDelay & 1000));
         Thread.sleep(latencyDelay * 1000);
 
         GetReviewDetails(client);

@@ -157,8 +157,6 @@ public class ImageList {
             // Verify that the list was deleted.
             GetAllListIds(client);
             System.out.println();
-            System.out.println("Press any key to exit...");
-            System.in.read();
         }
     }
 

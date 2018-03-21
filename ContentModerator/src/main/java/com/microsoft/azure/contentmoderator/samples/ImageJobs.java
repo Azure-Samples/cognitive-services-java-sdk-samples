@@ -47,7 +47,7 @@ public class ImageJobs {
      * As reviewers complete reviews, results are sent to the
      * callback endpoint using an HTTP POST request.
     */
-    private static final String CallbackEndpoint = "https://requestb.in/vxke1mvx";
+    private static final String CallbackEndpoint = "https%3A%2F%2Frequestb.in%2Fvxke1mvx";
 
     public static void execute(ContentModeratorClientImpl client) throws IOException, InterruptedException {
         System.out.println("Create moderation job for an image.");
