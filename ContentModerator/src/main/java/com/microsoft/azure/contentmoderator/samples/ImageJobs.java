@@ -21,15 +21,6 @@ public class ImageJobs {
     private static final String WorkflowName = "OCR";
 
     /*
-     * The name of the team to assign the job to.
-     * This must be the team name you used to create your
-     * Content Moderator account. You can retrieve your team name from
-     * the Conent Moderator web site. Your team name is the Id associated
-     * with your subscription.
-    */
-    private static final String TeamName = "testreview6";
-
-    /*
      * The URL of the image to create a review job for.
     */
     private static final String ImageUrl =
@@ -57,7 +48,7 @@ public class ImageJobs {
         // The WorkflowName contains the nameof the workflow defined in the online review tool.
         // See the quickstart article to learn more.
         JobIdInner jobResult = client.reviews().createJob(
-                TeamName,
+                Samples.TeamName,
                 "image",
                 "contentID",
                 WorkflowName,
@@ -74,7 +65,7 @@ public class ImageJobs {
 
         System.out.println("Get job status before review.");
         JobInner job = client.reviews().getJobDetails(
-                TeamName, jobId);
+                Samples.TeamName, jobId);
         System.out.println("Job status:" + job.status());
         System.out.println();
         System.out.println("Perform manual reviews on the Content Moderator site.");
@@ -87,7 +78,7 @@ public class ImageJobs {
 
         System.out.println("Get job status after review.");
         job = client.reviews().getJobDetails(
-                TeamName, jobId);
+                Samples.TeamName, jobId);
         System.out.println("Job status:" + job.status());
     }
 }

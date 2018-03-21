@@ -129,7 +129,8 @@ public class ImageList {
             RefreshSearchIndex(client, listId);
 
             // WriteLine();
-            System.out.println("Waiting {latencyDelay} minutes to allow the server time to propagate the index changes.");
+            System.out.println(
+                    String.format("Waiting %f minutes to allow the server time to propagate the index changes.", latencyDelay));
             Thread.sleep((int) (latencyDelay * 60 * 1000));
 
             // Match images against the image list.
@@ -142,7 +143,8 @@ public class ImageList {
             RefreshSearchIndex(client, listId);
 
             System.out.println();
-            System.out.println("Waiting {latencyDelay} minutes to allow the server time to propagate the index changes.");
+            System.out.println(
+                    String.format("Waiting %f minutes to allow the server time to propagate the index changes.", latencyDelay));
             Thread.sleep((int) (latencyDelay * 60 * 1000));
 
             // Match images again against the image list. The removed image should not get matched.

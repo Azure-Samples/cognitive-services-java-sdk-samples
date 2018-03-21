@@ -27,13 +27,15 @@ public class TextModeration {
                 client.textModerations().screenText("eng", "text/plain", text);
         System.out.println("Response:");
         System.out.println("Tracking Id: " + result.trackingId());
-        System.out.println("Status: " + result.status());
+        System.out.println("Status: " + result.status().description());
         System.out.println("Auto corrected text: " + result.autoCorrectedText());
-        System.out.println("Classification: ");
-        System.out.println("    Adult score: " + result.classification().adultScore());
-        System.out.println("    Offensive score: " + result.classification().offensiveScore());
-        System.out.println("    Racy score: " + result.classification().racyScore());
-        System.out.println("    Review recommended: " + result.classification().reviewRecommended());
+        if(result.classification() != null) {
+            System.out.println("Classification: ");
+            System.out.println("    Adult score: " + result.classification().adultScore());
+            System.out.println("    Offensive score: " + result.classification().offensiveScore());
+            System.out.println("    Racy score: " + result.classification().racyScore());
+            System.out.println("    Review recommended: " + result.classification().reviewRecommended());
+        }
     }
 
 }

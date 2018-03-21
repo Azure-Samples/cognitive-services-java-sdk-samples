@@ -56,15 +56,6 @@ public class ImageReviews {
     private static final String OutputFile = "OutputLog.txt";
 
     /*
-     * The name of the team to assign the review to.
-     * This must be the team name you used to create your
-     * Content Moderator account. You can retrieve your team name from
-     * the Content Moderator web site. Your team name is the Id associated
-     * with your subscription.
-     */
-    private static final String TeamName = "testreview6";
-
-    /*
      * The optional name of the subteam to assign the review to.
      */
     private static final String Subteam = null;
@@ -113,7 +104,7 @@ public class ImageReviews {
 
         System.out.println();
         System.out.println(
-                String.format("Waiting %d seconds for results to propagate.", latencyDelay & 1000));
+                String.format("Waiting %d seconds for results to propagate.", latencyDelay));
         Thread.sleep(latencyDelay * 1000);
 
         GetReviewDetails(client);
@@ -154,7 +145,7 @@ public class ImageReviews {
         }
 
         List<String> reviewIds = client.reviews().createReviews(
-                TeamName, "application/json", requestInfo);
+                Samples.TeamName, "application/json", requestInfo);
 
         System.out.println("ReviewIds: ");
         for (int i = 0; i < reviewIds.size(); i++)
@@ -176,7 +167,7 @@ public class ImageReviews {
         for (String reviewId : reviewItems)
         {
             ReviewInner reviewDetail = client.reviews().getReview(
-                    TeamName, reviewId);
+                    Samples.TeamName, reviewId);
 
             System.out.println(
                     "Review " + reviewDetail.reviewId() + " for item ID " + reviewDetail.contentId() + " is " +

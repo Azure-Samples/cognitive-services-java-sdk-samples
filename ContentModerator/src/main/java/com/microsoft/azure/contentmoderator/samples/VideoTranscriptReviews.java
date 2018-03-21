@@ -18,15 +18,6 @@ public class VideoTranscriptReviews {
     private static final int throttleRate = 2000;
 
     /*
-     * The name of the team to assign the review to.
-     * This must be the team name you used to create your
-     * Content Moderator account. You can retrieve your team name from
-     * the Conent Moderator web site. Your team name is the Id associated
-     * with your subscription.
-     */
-    private static final String TeamName = "testreview6";
-
-    /*
      * Create a video review. For more information, see the API reference:
      * https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/580519483f9b0709fc47f9c4
      * @param client The Content Moderator client.
@@ -41,7 +32,7 @@ public class VideoTranscriptReviews {
                 .withContent(content)
                 .withContentId(id)
                 .withStatus("Unpublished");
-        List<String> result = client.reviews().createVideoReviews("application/json", TeamName, body);
+        List<String> result = client.reviews().createVideoReviews("application/json", Samples.TeamName, body);
         Thread.sleep(throttleRate);
         // We created only one review.
         return result.get(0);
@@ -59,7 +50,7 @@ public class VideoTranscriptReviews {
     static void AddTranscript(ContentModeratorClientImpl client, String review_id, String transcript) throws InterruptedException {
         System.out.println(
                 String.format("Adding a transcript to the review with ID %s.", review_id));
-        client.reviews().addVideoTranscript(TeamName, review_id, review_id.getBytes());
+        client.reviews().addVideoTranscript(Samples.TeamName, review_id, review_id.getBytes());
         Thread.sleep(throttleRate);
     }
 
@@ -98,7 +89,7 @@ public class VideoTranscriptReviews {
         body.add(new TranscriptModerationBodyItemInner()
                 .withTimestamp("0")
                 .withTerms(terms));
-        client.reviews().addVideoTranscriptModerationResult("application/json", TeamName, review_id, body);
+        client.reviews().addVideoTranscriptModerationResult("application/json", Samples.TeamName, review_id, body);
         Thread.sleep(throttleRate);
     }
 
@@ -111,7 +102,7 @@ public class VideoTranscriptReviews {
     private static void PublishReview(ContentModeratorClientImpl client, String review_id) throws InterruptedException {
         System.out.println(
                 String.format("Publishing the review with ID %s.", review_id));
-        client.reviews().publishVideoReview(TeamName, review_id);
+        client.reviews().publishVideoReview(Samples.TeamName, review_id);
         Thread.sleep(throttleRate);
     }
 

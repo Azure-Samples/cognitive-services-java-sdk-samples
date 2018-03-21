@@ -24,6 +24,15 @@ public class Samples {
      */
     public static String apiKey = null;
 
+    /*
+     * The name of the team to assign the job to.
+     * This must be the team name you used to create your
+     * Content Moderator account. You can retrieve your team name from
+     * the Conent Moderator web site. Your team name is the Id associated
+     * with your subscription.
+     */
+    public static String TeamName;
+
     /**
      * Makes an instance of the ComputerVisionAPIImpl.
      * @param subscriptionKey cognitive services bing subscription key
@@ -79,6 +88,13 @@ public class Samples {
                 }
             }
 
+            if(TeamName == null) {
+                TeamName = System.getenv("AZURE_CONTENT_MODERATOR_TEAM_NAME");
+                if(TeamName == null) {
+                    throw new Exception("Azure content moderator samples team name not found.");
+                }
+            }
+
             ContentModeratorClientImpl client  = Samples.getClient(apiKey);
             ImageJobs.execute(client);
             ImageList.execute(client);
@@ -86,7 +102,8 @@ public class Samples {
             //ImageModeration.execute(client);
             ImageReviews.execute(client);
             TermList.execute(client);
-            TextModeration.execute(client);
+            //Please view sample and create required files before uncommenting.
+            //TextModeration.execute(client);
             VideoReviews.execute(client);
             VideoTranscriptReviews.execute(client);
 
