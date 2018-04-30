@@ -13,7 +13,7 @@ import com.microsoft.azure.cognitiveservices.search.newssearch.models.NewsModel;
 import com.microsoft.azure.cognitiveservices.search.newssearch.models.SearchOptionalParameter;
 
 /**
- * Azure Cognitive Services sample for using Bing News Search.
+ * Sample code for searching news using Bing News Search, an Azure Cognitive Service.
  *  - Search the news for "Quantum  Computing" and print out the results.
  */
 public class BingNewsSearchSample {
@@ -37,11 +37,7 @@ public class BingNewsSearchSample {
                         .withCount(100));
             System.out.println("Search news for query \"Quantum  Computing\" with market and count");
 
-            if (newsResults == null)
-            {
-                System.out.println("Didn't see any news result data..");
-            }
-            else
+            if (newsResults != null)
             {
                 if (newsResults.value().size() > 0)
                 {
@@ -59,6 +55,8 @@ public class BingNewsSearchSample {
                 {
                     System.out.println("Couldn't find news results!");
                 }
+            } else {
+                System.out.println("Didn't see any news result data..");
             }
 
             return true;

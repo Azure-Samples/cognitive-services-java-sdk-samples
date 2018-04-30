@@ -1,14 +1,15 @@
 ---
-services: Cognitive Services Bing News Search
+services: cognitive-services, bing-news-search
 platforms: java
 author: milismsft
 ---
 
 # Bing News Search SDK Sample ##
 
-This Azure Cognitive Service sample will show you how to get up and running using the SDK for Bing News Search service. They'll cover a few rudimentary use cases and hopefully express best practices for interacting with the data from these APIs.
+Sample code for searching news using Bing News Search, an Azure Cognitive Service.
 - Search the news for "Quantum  Computing" and print out the results.
-- 
+- Next sample here...
+
 
 ## Features
 
@@ -27,9 +28,8 @@ To get these samples running locally, simply get the pre-requisites above, then:
 
 1. git clone https://github.com/Azure-Samples/cognitive-services-java-sdk-samples.git
 2. cd cognitive-services-java-sdk-samples/Search/BingNewsSearch
-3. mvn compile
-4. set env variable AZURE_BING_SAMPLES_API_KEY to your cognitive services API key.
-5. mvn exec:java
+3. set env variable AZURE_BING_SAMPLES_API_KEY to your cognitive services API key.
+4. mvn compile exec:java
 
 ## More information ##
 
