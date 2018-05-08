@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.microsoft.azure</groupId>
   <artifactId>bing-custom-search-java</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <name>BingCustomSearchSample.java</name>
   <description>Sample for Bing Custom Search - Cognitive Services</description>
   <url>https://github.com/Azure-Samples/cognitive-services-java-sdk-samples</url>
@@ -63,7 +63,7 @@
     <dependency>
       <groupId>com.microsoft.azure.cognitiveservices</groupId>
       <artifactId>azure-cognitiveservices-customsearch</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
+      <version>1.0.0</version>
     </dependency>
   </dependencies>
 </project>
