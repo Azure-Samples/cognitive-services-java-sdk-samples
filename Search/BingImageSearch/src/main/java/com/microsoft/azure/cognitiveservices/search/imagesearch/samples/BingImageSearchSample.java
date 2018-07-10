@@ -18,11 +18,9 @@ import com.microsoft.azure.cognitiveservices.search.imagesearch.models.ImagesMod
 import com.microsoft.azure.cognitiveservices.search.imagesearch.models.InsightsTag;
 import com.microsoft.azure.cognitiveservices.search.imagesearch.models.PivotSuggestions;
 import com.microsoft.azure.cognitiveservices.search.imagesearch.models.Query;
-import com.microsoft.azure.cognitiveservices.search.imagesearch.models.SearchOptionalParameter;
 import com.microsoft.azure.cognitiveservices.search.imagesearch.models.TrendingImages;
 import com.microsoft.azure.cognitiveservices.search.imagesearch.models.TrendingImagesCategory;
 import com.microsoft.azure.cognitiveservices.search.imagesearch.models.TrendingImagesTile;
-import com.microsoft.azure.cognitiveservices.search.imagesearch.models.TrendingOptionalParameter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,9 +47,10 @@ public class BingImageSearchSample {
             //   pivot suggestion, and query expansion.
 
             System.out.println("Search images for query \"canadian rockies\"");
-            ImagesModel imageResults = client.bingImages().search("canadian rockies",
-                    new SearchOptionalParameter()
-                            .withMarket("en-us"));
+            ImagesModel imageResults = client.bingImages().search()
+                .withQuery("canadian rockies")
+                .withMarket("en-us")
+                .execute();
 
             if (imageResults != null) {
                 // Image results
@@ -109,11 +108,12 @@ public class BingImageSearchSample {
             //   of results and print out insightsToken, thumbnail url and web url of first result.
 
             System.out.println("Search images for \"studio ghibli\" results that are animated gifs and wide aspect");
-            imageResults = client.bingImages().search("studio ghibli",
-                    new SearchOptionalParameter()
-                            .withAspect(ImageAspect.WIDE)
-                            .withImageType(ImageType.ANIMATED_GIF)
-                            .withMarket("en-us"));
+            imageResults = client.bingImages().search()
+                .withQuery("studio ghibli")
+                .withAspect(ImageAspect.WIDE)
+                .withImageType(ImageType.ANIMATED_GIF)
+                .withMarket("en-us")
+                .execute();
 
             if (imageResults != null) {
                 // First image result
@@ -136,9 +136,9 @@ public class BingImageSearchSample {
             // This will search for trending images then verify categories and tiles.
 
             System.out.println("Search trending images");
-            TrendingImages trendingResults = client.bingImages().trending(
-                    new TrendingOptionalParameter()
-                            .withMarket("en-us"));
+            TrendingImages trendingResults = client.bingImages().trending()
+                .withMarket("en-us")
+                .execute();
 
             if (trendingResults != null) {
                 // Categories
@@ -168,9 +168,10 @@ public class BingImageSearchSample {
             // This will search images for "degas" and then search for image details of the first image.
 
             System.out.println("Search images for query \"degas\"");
-            imageResults = client.bingImages().search("degas",
-                    new SearchOptionalParameter()
-                            .withMarket("en-us"));
+            imageResults = client.bingImages().search()
+                .withQuery("degas")
+                .withMarket("en-us")
+                .execute();
 
             if (imageResults != null) {
                 if (imageResults.value().size() > 0) {

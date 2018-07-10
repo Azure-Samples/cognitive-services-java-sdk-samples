@@ -11,7 +11,6 @@ import com.microsoft.azure.cognitiveservices.search.websearch.BingWebSearchAPI;
 import com.microsoft.azure.cognitiveservices.search.websearch.BingWebSearchManager;
 import com.microsoft.azure.cognitiveservices.search.websearch.models.ImageObject;
 import com.microsoft.azure.cognitiveservices.search.websearch.models.NewsArticle;
-import com.microsoft.azure.cognitiveservices.search.websearch.models.SearchOptionalParameter;
 import com.microsoft.azure.cognitiveservices.search.websearch.models.SearchResponse;
 import com.microsoft.azure.cognitiveservices.search.websearch.models.VideoObject;
 import com.microsoft.azure.cognitiveservices.search.websearch.models.WebPage;
@@ -34,10 +33,11 @@ public class BingWebSearchSample {
             // This will look up a single query "Xbox" and print out name and url for first web, image, news and videos results
 
             System.out.println("Searched Web for \"Xbox\"");
-            SearchResponse webData = client.bingWebs().search("Xbox",
-                    new SearchOptionalParameter()
-                        .withMarket("en-us")
-                        .withCount(10));
+            SearchResponse webData = client.bingWebs().search()
+                .withQuery("Xbox")
+                .withMarket("en-us")
+                .withCount(10)
+                .execute();
 
             //WebPages
             if (webData != null && webData.webPages() != null && webData.webPages().value() != null &&

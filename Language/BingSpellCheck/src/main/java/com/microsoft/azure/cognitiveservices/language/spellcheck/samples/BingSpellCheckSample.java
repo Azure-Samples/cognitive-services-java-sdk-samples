@@ -35,11 +35,11 @@ public class BingSpellCheckSample {
             //   first item in the list of flagged tokens, the suggestions total count and the first suggestion in the
             //   list and its score.
 
-            System.out.println("Spell checking for text# \"Bill Gatas\"");
-            SpellCheck result = client.bingSpellCheckOperations().spellChecker("Bill Gatas",
-                    new SpellCheckerOptionalParameter()
-                        .withMode("proof")
-                        .withMarket("en-us"));
+            SpellCheck result = client.bingSpellCheckOperations().spellChecker()
+                .withText("Bill Gatas")
+                .withMode("proof")
+                .withMarket("en-us")
+                .execute();
 
             // SpellCheck Results
             if (result.flaggedTokens().size() > 0)

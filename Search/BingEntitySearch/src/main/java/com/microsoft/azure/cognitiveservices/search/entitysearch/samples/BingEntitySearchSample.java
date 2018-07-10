@@ -41,9 +41,10 @@ public class BingEntitySearchSample {
             //=============================================================
             // This will look up a single entity "Satya Nadella" and print out a short description of it.
 
-            SearchResponse entityData = client.bingEntities().search("Satya Nadella",
-                    new SearchOptionalParameter()
-                            .withMarket("en-us"));
+            SearchResponse entityData = client.bingEntities().search()
+                .withQuery("Satya Nadella")
+                .withMarket("en-us")
+                .execute();
 
             if (entityData.entities().value().size() > 0) {
                 // find the entity that represents the dominant one
@@ -68,9 +69,10 @@ public class BingEntitySearchSample {
             //=============================================================
             // This will handle disambiguation results for an ambiguous query "harry potter".
 
-            entityData = client.bingEntities().search("William Gates",
-                    new SearchOptionalParameter()
-                            .withMarket("en-us"));
+            entityData = client.bingEntities().search()
+                .withQuery("William Gates")
+                .withMarket("en-us")
+                .execute();
 
             if (entityData.entities().value().size() > 0) {
                 // find the entity that represents the dominant one
@@ -110,9 +112,10 @@ public class BingEntitySearchSample {
             // This will look up a single store "Microsoft Store" and print out its phone number.
 
             System.out.println("Searching for \"Microsoft Store\"");
-            entityData = client.bingEntities().search("Microsoft Store",
-                    new SearchOptionalParameter()
-                            .withMarket("en-us"));
+            entityData = client.bingEntities().search()
+                .withQuery("Microsoft Store")
+                .withMarket("en-us")
+                .execute();
 
             if (entityData.places() != null && entityData.places().value().size() > 0) {
                 // Some local entities will be places, others won't be. Depending on the data you want, try to cast to the appropriate schema
@@ -170,9 +173,10 @@ public class BingEntitySearchSample {
             //=============================================================
             // This triggers a bad request and shows how to read the error response.
             try {
-                SearchResponse errorQuery = client.bingEntities().search("harry potter",
-                        new SearchOptionalParameter()
-                                .withMarket("no-ty"));
+                SearchResponse errorQuery = client.bingEntities().search()
+                    .withQuery("harry potter")
+                    .withMarket("no-ty")
+                    .execute();
             } catch (ErrorResponseException ex) {
                 // The status code of the error should be a good indication of what occurred. However, if you'd like more details, you can dig into the response.
                 // Please note that depending on the type of error, the response schema might be different, so you aren't guaranteed a specific error response schema.

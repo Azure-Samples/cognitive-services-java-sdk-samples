@@ -8,7 +8,6 @@ package com.microsoft.azure.cognitiveservices.search.customsearch.samples;
 
 import com.microsoft.azure.cognitiveservices.search.customsearch.BingCustomSearchAPI;
 import com.microsoft.azure.cognitiveservices.search.customsearch.BingCustomSearchManager;
-import com.microsoft.azure.cognitiveservices.search.customsearch.models.SearchOptionalParameter;
 import com.microsoft.azure.cognitiveservices.search.customsearch.models.SearchResponse;
 import com.microsoft.azure.cognitiveservices.search.customsearch.models.WebPage;
 
@@ -30,11 +29,11 @@ public class BingCustomSearchSample {
             // This will custom search for "Xbox" and print out name and url for the first web page in the results list
 
             System.out.println("Searched for Query# \"Xbox\"");
-            SearchResponse webData = client.bingCustomInstances().search(
-                    customConfigId != null ? Integer.valueOf(customConfigId) : 0,
-                    "Xbox",
-                    new SearchOptionalParameter()
-                        .withMarket("en-us"));
+            SearchResponse webData = client.bingCustomInstances().search()
+                .withCustomConfig(customConfigId != null ? Long.valueOf(customConfigId) : 0)
+                .withQuery("Xbox")
+                .withMarket("en-us")
+                .execute();
 
             if (webData != null && webData.webPages() != null && webData.webPages().value().size() > 0)
             {

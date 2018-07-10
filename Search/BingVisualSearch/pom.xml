@@ -3,10 +3,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.microsoft.azure</groupId>
-  <artifactId>bing-news-search-java</artifactId>
+  <artifactId>bing-visual-search-java</artifactId>
   <version>1.0.1</version>
-  <name>BingNewsSearchSample.java</name>
-  <description>Sample for Bing News Search - Cognitive Services</description>
+  <name>BingVisualSearchSample.java</name>
+  <description>Sample for Bing Visual Search - Cognitive Services</description>
   <url>https://github.com/Azure-Samples/cognitive-services-java-sdk-samples</url>
   <build>
     <plugins>
@@ -15,7 +15,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.4.0</version>
         <configuration>
-          <mainClass>com.microsoft.azure.cognitiveservices.search.newssearch.samples.BingNewsSearchSample</mainClass>
+          <mainClass>com.microsoft.azure.cognitiveservices.search.visualsearch.samples.BingVisualSearchSample</mainClass>
         </configuration>
       </plugin>
       <plugin>
@@ -40,7 +40,7 @@
               </descriptorRefs>
               <archive>
                 <manifest>
-                  <mainClass>com.microsoft.azure.cognitiveservices.search.newssearch.samples.BingNewsSearchSample.java</mainClass>
+                  <mainClass>com.microsoft.azure.cognitiveservices.search.visualsearch.samples.BingViSualSearchSample.java</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -62,8 +62,13 @@
     </dependency>
     <dependency>
       <groupId>com.microsoft.azure.cognitiveservices</groupId>
-      <artifactId>azure-cognitiveservices-newssearch</artifactId>
-      <version>1.0.1</version>
+      <artifactId>azure-cognitiveservices-visualsearch</artifactId>
+      <version>1.0.1-beta</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.8.5</version>
     </dependency>
   </dependencies>
 </project>
