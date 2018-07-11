@@ -48,8 +48,6 @@ public class BingVisualSearchSample {
         try {
 
             byte[] imageBytes = ByteStreams.toByteArray(BingVisualSearchSample.class.getResourceAsStream("/image.jpg"));
-//            String encoded = BaseEncoding.base64().encode(rawBytes);
-//            byte[] imageBytes = encoded.getBytes();
 
             Gson gson = new Gson();
             VisualSearchRequest visualSearchRequest;
@@ -60,11 +58,11 @@ public class BingVisualSearchSample {
             // of actions, and the first action type
 
             System.out.println("Search with a binary of dog image");
-//            visualSearchResults = client.bingImages().visualSearch()
-//                .withImage(imageBytes)
-//                .execute();
-//
-//            PrintVisualSearchResults(visualSearchResults);
+            visualSearchResults = client.bingImages().visualSearch()
+                .withImage(imageBytes)
+                .execute();
+
+            PrintVisualSearchResults(visualSearchResults);
 
 
             //=============================================================
@@ -80,13 +78,13 @@ public class BingVisualSearchSample {
             ImageInfo imageInfo = new ImageInfo().withCropArea(cropArea);
             visualSearchRequest = new VisualSearchRequest().withImageInfo(imageInfo);
             System.out.println(gson.toJson(visualSearchRequest));
-//            visualSearchResults = client.bingImages().visualSearch()
-//                .withImage(imageBytes)
-//                .withKnowledgeRequest(gson.toJson(visualSearchRequest))
-////                .withKnowledgeRequest("{\"imageInfo\":{\"cropArea\":{\"top\":\"0.1\",\"bottom\":\"0.5\",\"left\":\"0.1\",\"right\":\"0.9\"}}}")
-//                .execute();
-//
-//            PrintVisualSearchResults(visualSearchResults);
+            visualSearchResults = client.bingImages().visualSearch()
+                .withImage(imageBytes)
+                .withKnowledgeRequest(gson.toJson(visualSearchRequest))
+//                .withKnowledgeRequest("{\"imageInfo\":{\"cropArea\":{\"top\":\"0.1\",\"bottom\":\"0.5\",\"left\":\"0.1\",\"right\":\"0.9\"}}}")
+                .execute();
+
+            PrintVisualSearchResults(visualSearchResults);
 
             //=============================================================
             // This will send an image url in the knowledgeReques along with a "site:www.bing.com" filter, and print out
@@ -197,22 +195,7 @@ public class BingVisualSearchSample {
 
             final String subscriptionKey = System.getenv("AZURE_BING_SAMPLES_API_KEY");
 
-            ServiceClientCredentials serviceClientCredentials = new ServiceClientCredentials() {
-                public void applyCredentialsFilter(OkHttpClient.Builder builder) {
-                    builder.addNetworkInterceptor(new Interceptor() {
-                        public Response intercept(Chain chain) throws IOException {
-                            Request request = null;
-                            Request original = chain.request();
-                            okhttp3.Request.Builder requestBuilder = original.newBuilder().addHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
-                            request = requestBuilder.build();
-                            return chain.proceed(request);
-                        }
-                    });
-                    builder.addNetworkInterceptor(new LoggingInterceptor(LogLevel.BODY_AND_HEADERS));
-                }
-            };
-            BingVisualSearchAPI client = BingVisualSearchManager.authenticate(serviceClientCredentials);
-//            BingVisualSearchAPI client = BingVisualSearchManager.authenticate(subscriptionKey);
+            BingVisualSearchAPI client = BingVisualSearchManager.authenticate(subscriptionKey);
 
             runSample(client);
         } catch (Exception e) {
