@@ -8,14 +8,11 @@ package com.microsoft.azure.cognitiveservices.search.newssearch.samples;
 
 import com.microsoft.azure.cognitiveservices.search.newssearch.BingNewsSearchAPI;
 import com.microsoft.azure.cognitiveservices.search.newssearch.BingNewsSearchManager;
-import com.microsoft.azure.cognitiveservices.search.newssearch.models.CategoryOptionalParameter;
 import com.microsoft.azure.cognitiveservices.search.newssearch.models.Freshness;
 import com.microsoft.azure.cognitiveservices.search.newssearch.models.NewsArticle;
 import com.microsoft.azure.cognitiveservices.search.newssearch.models.NewsModel;
 import com.microsoft.azure.cognitiveservices.search.newssearch.models.NewsTopic;
 import com.microsoft.azure.cognitiveservices.search.newssearch.models.SafeSearch;
-import com.microsoft.azure.cognitiveservices.search.newssearch.models.SearchOptionalParameter;
-import com.microsoft.azure.cognitiveservices.search.newssearch.models.TrendingOptionalParameter;
 import com.microsoft.azure.cognitiveservices.search.newssearch.models.TrendingTopics;
 
 /**
@@ -41,10 +38,11 @@ public class BingNewsSearchSample {
             // of the first item in the list of news result list.
 
             System.out.println("Search news for query \"Quantum  Computing\" with market and count");
-            NewsModel newsResults = client.bingNews().search("Quantum  Computing",
-                    new SearchOptionalParameter()
-                        .withMarket("en-us")
-                        .withCount(100));
+            NewsModel newsResults = client.bingNews().search()
+                .withQuery("Quantum  Computing")
+                .withMarket("en-us")
+                .withCount(100)
+                .execute();
 
             PrintNewsResult(newsResults);
 
@@ -55,11 +53,12 @@ public class BingNewsSearchSample {
             //  name of provider of the first news result
 
             System.out.println("Search most recent news for query \"Artificial Intelligence\" with freshness and sortBy");
-            newsResults = client.bingNews().search("Artificial Intelligence",
-                    new SearchOptionalParameter()
-                            .withMarket("en-us")
-                            .withFreshness(Freshness.WEEK)
-                            .withSortBy("Date"));
+            newsResults = client.bingNews().search()
+                .withQuery("Artificial Intelligence")
+                .withMarket("en-us")
+                .withFreshness(Freshness.WEEK)
+                .withSortBy("Date")
+                .execute();
 
             PrintNewsResult(newsResults);
 
@@ -69,11 +68,11 @@ public class BingNewsSearchSample {
             //  and print out category, name, url, description, published time and name of provider of the first news result
 
             System.out.println("Search category news for movie and TV entertainment with safe search");
-            newsResults = client.bingNews().category(
-                    new CategoryOptionalParameter()
-                            .withMarket("en-us")
-                            .withCategory("Entertainment_MovieAndTV")
-                            .withSafeSearch(SafeSearch.STRICT));
+            newsResults = client.bingNews().category()
+                .withMarket("en-us")
+                .withCategory("Entertainment_MovieAndTV")
+                .withSafeSearch(SafeSearch.STRICT)
+                .execute();
 
             PrintNewsResult(newsResults);
 
@@ -83,9 +82,9 @@ public class BingNewsSearchSample {
             //  webSearchUrl, newsSearchUrl and image Url of the first news result
 
             System.out.println("Search news trending topics in Bing");
-            TrendingTopics trendingTopics = client.bingNews().trending(
-                    new TrendingOptionalParameter()
-                            .withMarket("en-us"));
+            TrendingTopics trendingTopics = client.bingNews().trending()
+                .withMarket("en-us")
+                .execute();
 
             if (trendingTopics != null) {
                 if (trendingTopics.value().size() > 0) {

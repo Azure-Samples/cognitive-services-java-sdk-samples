@@ -26,7 +26,7 @@ This project framework provides examples for the **Bing Web Search SDK** for the
 To get these samples running locally, simply get the pre-requisites above, then:
 
 1. git clone https://github.com/Azure-Samples/cognitive-services-java-sdk-samples.git
-2. cd cognitive-services-java-sdk-samples/Search/BingNewsSearch
+2. cd cognitive-services-java-sdk-samples/Search/BingWebSearch
 3. set env variable AZURE_BING_SAMPLES_API_KEY to your cognitive services API key.
 4. mvn compile exec:java
 

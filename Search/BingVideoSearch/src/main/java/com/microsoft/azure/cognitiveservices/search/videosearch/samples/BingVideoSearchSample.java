@@ -8,10 +8,7 @@ package com.microsoft.azure.cognitiveservices.search.videosearch.samples;
 
 import com.microsoft.azure.cognitiveservices.search.videosearch.BingVideoSearchAPI;
 import com.microsoft.azure.cognitiveservices.search.videosearch.BingVideoSearchManager;
-import com.microsoft.azure.cognitiveservices.search.videosearch.models.DetailsOptionalParameter;
 import com.microsoft.azure.cognitiveservices.search.videosearch.models.Freshness;
-import com.microsoft.azure.cognitiveservices.search.videosearch.models.SearchOptionalParameter;
-import com.microsoft.azure.cognitiveservices.search.videosearch.models.TrendingOptionalParameter;
 import com.microsoft.azure.cognitiveservices.search.videosearch.models.TrendingVideos;
 import com.microsoft.azure.cognitiveservices.search.videosearch.models.TrendingVideosCategory;
 import com.microsoft.azure.cognitiveservices.search.videosearch.models.TrendingVideosSubcategory;
@@ -49,10 +46,11 @@ public class BingVideoSearchSample {
             //   name and url of the first video result.
 
             System.out.println("Search videos for query \"SwiftKey\"");
-            VideosModel videoResults = client.bingVideos().search("SwiftKey",
-                    new SearchOptionalParameter()
-                        .withCount(10)
-                        .withMarket("en-us"));
+            VideosModel videoResults = client.bingVideos().search()
+                .withQuery("SwiftKey")
+                .withCount(10)
+                .withMarket("en-us")
+                .execute();
 
             printVideoResults(videoResults);
 
@@ -62,13 +60,14 @@ public class BingVideoSearchSample {
             //   number of results and print out id, name and url of the first video result.
 
             System.out.println("Search videos for query \"Bellevue Trailer\" that is free, short and 1080p resolution");
-            videoResults = client.bingVideos().search("Bellevue Trailer",
-                    new SearchOptionalParameter()
-                            .withFreshness(Freshness.MONTH)
-                            .withLength(VideoLength.SHORT)
-                            .withPricing(VideoPricing.FREE)
-                            .withResolution(VideoResolution.HD1080P)
-                            .withMarket("en-us"));
+            videoResults = client.bingVideos().search()
+                .withQuery("Bellevue Trailer")
+                .withFreshness(Freshness.MONTH)
+                .withLength(VideoLength.SHORT)
+                .withPricing(VideoPricing.FREE)
+                .withResolution(VideoResolution.HD1080P)
+                .withMarket("en-us")
+                .execute();
 
             printVideoResults(videoResults);
 
@@ -77,9 +76,9 @@ public class BingVideoSearchSample {
             // This will search for trending videos then verify banner tiles and categories.
 
             System.out.println("Search trending videos");
-            TrendingVideos trendingResults = client.bingVideos().trending(
-                    new TrendingOptionalParameter()
-                        .withMarket("en-us"));
+            TrendingVideos trendingResults = client.bingVideos().trending()
+                .withMarket("en-us")
+                .execute();
 
             printTrendingResults(trendingResults);
 
@@ -95,12 +94,12 @@ public class BingVideoSearchSample {
 
                 System.out.println(
                         String.format("Search detail for video id={firstVideo.VideoId}, name=%s", firstVideo.name()));
-                VideoDetails videoDetail = client.bingVideos().details("Bellevue Trailer",
-                        new DetailsOptionalParameter()
-                                .withId(firstVideo.videoId())
-                                .withModules(modules)
-                                .withMarket("en-us")
-                );
+                VideoDetails videoDetail = client.bingVideos().details()
+                    .withQuery("Bellevue Trailer")
+                    .withId(firstVideo.videoId())
+                    .withModules(modules)
+                    .withMarket("en-us")
+                    .execute();
 
                 if (videoDetail != null) {
                     if (videoDetail.videoResult() != null) {

@@ -1,18 +1,20 @@
 ---
-services: cognitive-services, bing-custom-search
+services: cognitive-services, bing-visual-search
 platforms: java
 author: milismsft
 ---
 
-# Bing Custom Search SDK Sample ##
+# Bing Visual Search SDK Sample ##
 
-Sample code for custom searching using Bing Custom Search, an Azure Cognitive Service.
-- Custom search for "Xbox" and print out name and url for the first web page in the results list.
-
+Sample code for searching news using Bing Visual Search, an Azure Cognitive Service.
+- Search videos for "SwiftKey" and print out id, name and url.
+- Search videos for "Bellevue Trailer" that is free, short and 1080p resolution and print out id, name and url.
+- Search for trending videos then verify banner tiles and categories.
+- Search videos for "Bellevue Trailer" and then search for detail information of the first video.
 
 ## Features
 
-This project framework provides examples for the **Bing Custom Search SDK** for the [Custom Search API](https://azure.microsoft.com/en-us/services/cognitive-services/)
+This project framework provides examples for the **Bing Visual Search SDK** for the [Visual Search API](https://azure.microsoft.com/en-us/services/cognitive-services/)
 
 ## Getting Started
 
@@ -26,10 +28,9 @@ This project framework provides examples for the **Bing Custom Search SDK** for 
 To get these samples running locally, simply get the pre-requisites above, then:
 
 1. git clone https://github.com/Azure-Samples/cognitive-services-java-sdk-samples.git
-2. cd cognitive-services-java-sdk-samples/Search/BingCustomSearch
+2. cd cognitive-services-java-sdk-samples/Search/BingVisualSearch
 3. set env variable AZURE_BING_SAMPLES_API_KEY to your cognitive services API key.
-4. set env variable AZURE_BING_SAMPLES_CUSTOM_CONFIG_ID to your custom configuration id.
-5. mvn compile exec:java
+4. mvn compile exec:java
 
 ## More information ##
 
