@@ -8,10 +8,13 @@ package com.microsoft.azure.cognitiveservices.search.autosuggest.samples;
 
 import com.microsoft.azure.cognitiveservices.search.autosuggest.BingAutoSuggestSearchAPI;
 import com.microsoft.azure.cognitiveservices.search.autosuggest.BingAutoSuggestSearchManager;
+import com.microsoft.azure.cognitiveservices.search.autosuggest.models.SearchAction;
+import com.microsoft.azure.cognitiveservices.search.autosuggest.models.Suggestions;
+import com.microsoft.azure.cognitiveservices.search.autosuggest.models.SuggestionsSuggestionGroup;
 
 /**
  * Sample code for custom searching news using Bing Auto Suggest, an Azure Cognitive Service.
- *  - Custom search for "Xbox" and print out name and url for the first web page in the results list.
+ *  - Search for "Satya Nadella" and print out the first group of suggestions returned from the service.
  */
 public class BingAutoSuggestSample {
     /**
@@ -24,7 +27,26 @@ public class BingAutoSuggestSample {
         try {
 
             //=============================================================
-            // This will custom search for "Xbox" and print out name and url for the first web page in the results list
+            // This will request suggestions for "Satya Nadella" and print out the results
+
+            System.out.println("Searched for \"Satya Nadella\" and print out the returned suggestions");
+
+            Suggestions suggestions = client.bingAutoSuggestSearch().autoSuggest()
+                .withQuery("Satya Nadella")
+                .execute();
+
+            if (suggestions != null && suggestions.suggestionGroups() != null && suggestions.suggestionGroups().size() > 0) {
+                System.out.println("Found the following suggestions:");
+                for (SearchAction suggestion: suggestions.suggestionGroups().get(0).searchSuggestions()) {
+                    System.out.println("....................................");
+                    System.out.println(suggestion.query());
+                    System.out.println(suggestion.displayText());
+                    System.out.println(suggestion.url());
+                    System.out.println(suggestion.searchKind());
+                }
+            } else {
+                System.out.println("Didn't see any suggestion...");
+            }
 
             return true;
         } catch (Exception f) {

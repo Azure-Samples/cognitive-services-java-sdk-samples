@@ -7,7 +7,7 @@ author: milismsft
 # Bing Auto Suggest SDK Sample ##
 
 Sample code for custom searching using Bing Auto Suggest, an Azure Cognitive Service.
-- Custom search for "Xbox" and print out name and url for the first web page in the results list.
+- Search for "Satya Nadella" and print out the first group of suggestions returned from the service.
 
 
 ## Features
