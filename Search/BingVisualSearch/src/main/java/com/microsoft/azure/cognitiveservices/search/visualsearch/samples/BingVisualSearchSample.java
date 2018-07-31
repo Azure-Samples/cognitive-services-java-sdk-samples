@@ -6,7 +6,6 @@
 
 package com.microsoft.azure.cognitiveservices.search.visualsearch.samples;
 
-import com.google.common.io.BaseEncoding;
 import com.google.common.io.ByteStreams;
 import com.google.gson.Gson;
 import com.microsoft.azure.cognitiveservices.search.visualsearch.BingVisualSearchAPI;
@@ -18,16 +17,6 @@ import com.microsoft.azure.cognitiveservices.search.visualsearch.models.ImageKno
 import com.microsoft.azure.cognitiveservices.search.visualsearch.models.ImageTag;
 import com.microsoft.azure.cognitiveservices.search.visualsearch.models.KnowledgeRequest;
 import com.microsoft.azure.cognitiveservices.search.visualsearch.models.VisualSearchRequest;
-import com.microsoft.rest.LogLevel;
-import com.microsoft.rest.RestClient;
-import com.microsoft.rest.credentials.ServiceClientCredentials;
-import com.microsoft.rest.interceptors.LoggingInterceptor;
-import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
-import java.io.IOException;
 
 /**
  * Sample code for searching news using Bing Video Search, an Azure Cognitive Service.
