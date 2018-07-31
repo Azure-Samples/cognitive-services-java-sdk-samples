@@ -3,10 +3,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.microsoft.azure</groupId>
-  <artifactId>custom-vision-java</artifactId>
+  <artifactId>computer-vision-java</artifactId>
   <version>1.0.2</version>
   <name>Samples.java</name>
-  <description>Sample for Custom Vision - Cognitive Services</description>
+  <description>Sample for Computer Vision - Cognitive Services</description>
   <url>https://github.com/Azure-Samples/cognitive-services-java-sdk-samples</url>
   <build>
     <plugins>
@@ -15,7 +15,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.4.0</version>
         <configuration>
-          <mainClass>com.microsoft.azure.cognitiveservices.vision.customvision.samples.CustomVisionSamples</mainClass>
+          <mainClass>com.microsoft.azure.cognitiveservices.vision.computervision.samples.ComputerVisionSamples</mainClass>
         </configuration>
       </plugin>
       <plugin>
@@ -40,7 +40,7 @@
               </descriptorRefs>
               <archive>
                 <manifest>
-                  <mainClass>com.microsoft.azure.cognitiveservices.vision.customvision.samples.CustomVisionSamples.java</mainClass>
+                  <mainClass>com.microsoft.azure.cognitiveservices.vision.computervision.samples.ComputerVisionSamples.java</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -62,12 +62,7 @@
     </dependency>
     <dependency>
       <groupId>com.microsoft.azure.cognitiveservices</groupId>
-      <artifactId>azure-cognitiveservices-customvision-training</artifactId>
-      <version>1.0.2-beta</version>
-    </dependency>
-    <dependency>
-      <groupId>com.microsoft.azure.cognitiveservices</groupId>
-      <artifactId>azure-cognitiveservices-customvision-prediction</artifactId>
+      <artifactId>azure-cognitiveservices-computervision</artifactId>
       <version>1.0.2-beta</version>
     </dependency>
   </dependencies>

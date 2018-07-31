@@ -1,18 +1,17 @@
 ---
-services: cognitive-services, custom-vision
+services: cognitive-services, computer-vision
 platforms: java
-author: areddish
+author: milismsft
 ---
 
-# Custom Vision SDK Sample ##
+# Computer Vision SDK Sample ##
 
-Sample code for image classification and object detection for Custom Vision, an Azure Cognitive Service.
-- Creates an image classification project, upload images, train it and make a prediction.
-- Creates an object detection project, upload images, train it and make a prediction.
+Sample code for image classification and object detection for Computer Vision, an Azure Cognitive Service.
+- Send a resource image and retrieve a description of it
 
 ## Features
 
-This project framework provides examples for the **Custom Vision SDK** for the [Custom Vision API](https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/)
+This project framework provides examples for the **Computer Vision SDK** for the [Computer Vision API](https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/)
 
 ## Getting Started
 
@@ -26,10 +25,9 @@ This project framework provides examples for the **Custom Vision SDK** for the [
 To get these samples running locally, simply get the pre-requisites above, then:
 
 1. git clone https://github.com/Azure-Samples/cognitive-services-java-sdk-samples.git
-2. cd cognitive-services-java-sdk-samples/Vision/CustomVision
-3. set env variable AZURE_CUSTOMVISION_TRAINING_API_KEY to your cognitive services TRAINING API key.
-4. set env variable AZURE_CUSTOMVISION_PREDICTION_API_KEY to your cognitive services PREDICTION API key.
-5. mvn compile exec:java
+2. cd cognitive-services-java-sdk-samples/Vision/ComputerVision
+3. set env variable AZURE_COMPUTERVISION_API_KEY to your cognitive services API key.
+4. mvn compile exec:java
 
 ## More information ##
 
