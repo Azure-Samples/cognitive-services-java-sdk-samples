@@ -68,7 +68,7 @@ public class ComputerVisionSamples {
                 }
                 System.out.println("\nThe primary colors of this image are:" + primaryColors);
             }
-            
+
             return true;
         } catch (Exception e) {
             System.out.println(e.getMessage());
