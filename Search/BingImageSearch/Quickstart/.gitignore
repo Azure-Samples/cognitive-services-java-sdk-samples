@@ -38,6 +38,8 @@ local.properties
 target/
 .idea
 *.iml
+.factorypath
+.vscode/
 
 # Mac OS #
 .DS_Store
