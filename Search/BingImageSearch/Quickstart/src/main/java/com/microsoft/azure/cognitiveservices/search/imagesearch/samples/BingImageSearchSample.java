@@ -65,7 +65,10 @@ public class BingImageSearchSample {
             //=============================================================
             // Authenticate
 
-            final String subscriptionKey = "ENTER YOUR KEY HERE";
+            //uncomment the below line if you have set the ` AZURE_BING_SAMPLES_API_KEY` to your cognitive services API key.
+            //string subscriptionKey = System.getenv("AZURE_BING_SAMPLES_API_KEY");
+            //otherwise uncomment this line and paste your subscription key in
+            //string subscriptionKey = "enter your key here";
 
             BingImageSearchAPI client = BingImageSearchManager.authenticate(subscriptionKey);
             String searchTerm = "canadian rockies";
