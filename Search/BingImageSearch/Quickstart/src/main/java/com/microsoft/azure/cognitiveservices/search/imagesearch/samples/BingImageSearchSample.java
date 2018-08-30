@@ -13,7 +13,7 @@ import com.microsoft.azure.cognitiveservices.search.imagesearch.models.ImagesMod
 
 /**
  * Sample code for searching images using Bing Image Search, an Azure Cognitive Service.
- *  - Search images for "canadian rockies" then verify number of results and print out pivot suggestion and query expansion.
+ *  - Searches images for "canadian rockies" then outputs the result.
  */
 public class BingImageSearchSample {
     /**
