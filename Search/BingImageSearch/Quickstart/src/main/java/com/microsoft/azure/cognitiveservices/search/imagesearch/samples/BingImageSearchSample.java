@@ -65,7 +65,7 @@ public class BingImageSearchSample2 {
             //=============================================================
             // Authenticate
 
-            final String subscriptionKey = "bbfb78ad189649248750011e83b7b22d";//System.getenv("AZURE_BING_SAMPLES_API_KEY");
+            final String subscriptionKey = "ENTER YOUR KEY HERE";//System.getenv("AZURE_BING_SAMPLES_API_KEY");
 
             BingImageSearchAPI client = BingImageSearchManager.authenticate(subscriptionKey);
             String searchTerm = "canadian rockies";
