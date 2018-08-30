@@ -15,7 +15,7 @@ import com.microsoft.azure.cognitiveservices.search.imagesearch.models.ImagesMod
  * Sample code for searching images using Bing Image Search, an Azure Cognitive Service.
  *  - Search images for "canadian rockies" then verify number of results and print out pivot suggestion and query expansion.
  */
-public class BingImageSearchSample2 {
+public class BingImageSearchSample {
     /**
      * Main function which runs the actual sample.
      *
@@ -65,7 +65,7 @@ public class BingImageSearchSample2 {
             //=============================================================
             // Authenticate
 
-            final String subscriptionKey = "ENTER YOUR KEY HERE";//System.getenv("AZURE_BING_SAMPLES_API_KEY");
+            final String subscriptionKey = "ENTER YOUR KEY HERE";
 
             BingImageSearchAPI client = BingImageSearchManager.authenticate(subscriptionKey);
             String searchTerm = "canadian rockies";
