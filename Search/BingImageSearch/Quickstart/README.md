@@ -27,7 +27,7 @@ After getting the prerequisites above:
 1. View the quickstart available [here]([Quickstart: Search for images using the Bing Image Search SDK and Java](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/image-sdk-java-quickstart))
 1. git clone https://github.com/Azure-Samples/cognitive-services-java-sdk-samples.git
 2. cd cognitive-services-java-sdk-samples/Search/BingImageSearch/Quickstart
-3. Copy your cognitive services API key into the program.
+3. Either set a system evironment variable named `AZURE_BING_SAMPLES_API_KEY` to your cognitive Services API key, or copy your key into the program.
 4. mvn compile exec:java
 
 ## More information
