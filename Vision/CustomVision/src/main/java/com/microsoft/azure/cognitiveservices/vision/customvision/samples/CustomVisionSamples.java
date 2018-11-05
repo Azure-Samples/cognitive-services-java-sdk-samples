@@ -21,12 +21,12 @@ import com.microsoft.azure.cognitiveservices.vision.customvision.training.models
 import com.microsoft.azure.cognitiveservices.vision.customvision.training.models.Iteration;
 import com.microsoft.azure.cognitiveservices.vision.customvision.training.models.Project;
 import com.microsoft.azure.cognitiveservices.vision.customvision.training.models.Region;
-import com.microsoft.azure.cognitiveservices.vision.customvision.training.TrainingApi;
+import com.microsoft.azure.cognitiveservices.vision.customvision.training.CustomVisionTrainingClient;
 import com.microsoft.azure.cognitiveservices.vision.customvision.training.Trainings;
 import com.microsoft.azure.cognitiveservices.vision.customvision.training.CustomVisionTrainingManager;
 import com.microsoft.azure.cognitiveservices.vision.customvision.prediction.models.ImagePrediction;
 import com.microsoft.azure.cognitiveservices.vision.customvision.prediction.models.Prediction;
-import com.microsoft.azure.cognitiveservices.vision.customvision.prediction.PredictionEndpoint;
+import com.microsoft.azure.cognitiveservices.vision.customvision.prediction.CustomVisionPredictionClient;
 import com.microsoft.azure.cognitiveservices.vision.customvision.prediction.CustomVisionPredictionManager;
 import com.microsoft.azure.cognitiveservices.vision.customvision.training.models.Tag;
 
@@ -37,7 +37,7 @@ public class CustomVisionSamples {
      * @param trainer the Custom Vision Training client object
      * @param predictor the Custom Vision Prediction client object
      */
-    public static void runSample(TrainingApi trainer, PredictionEndpoint predictor) {
+    public static void runSample(CustomVisionTrainingClient trainer, CustomVisionPredictionClient predictor) {
         try {
             // This demonstrates how to create an image classification project, upload images,
             // train it and make a prediction.
@@ -52,7 +52,7 @@ public class CustomVisionSamples {
         }
     }
 
-    public static void ImageClassification_Sample(TrainingApi trainClient, PredictionEndpoint predictor) {
+    public static void ImageClassification_Sample(CustomVisionTrainingClient trainClient, CustomVisionPredictionClient predictor) {
         try {
             System.out.println("ImageClassification Sample");
             Trainings trainer = trainClient.trainings();
@@ -124,7 +124,7 @@ public class CustomVisionSamples {
         }
     }
 
-    public static void ObjectDetection_Sample(TrainingApi trainClient, PredictionEndpoint predictor)
+    public static void ObjectDetection_Sample(CustomVisionTrainingClient trainClient, CustomVisionPredictionClient predictor)
     {
         try {
             // Mapping of filenames to their respective regions in the image. The coordinates are specified
@@ -326,8 +326,11 @@ public class CustomVisionSamples {
             final String trainingApiKey = System.getenv("AZURE_CUSTOMVISION_TRAINING_API_KEY");;
             final String predictionApiKey = System.getenv("AZURE_CUSTOMVISION_PREDICTION_API_KEY");;
 
-            TrainingApi trainClient = CustomVisionTrainingManager.authenticate(trainingApiKey);
-            PredictionEndpoint predictClient = CustomVisionPredictionManager.authenticate(predictionApiKey);
+            CustomVisionTrainingClient trainClient = CustomVisionTrainingManager.authenticate(trainingApiKey);
+            CustomVisionPredictionClient predictClient = CustomVisionPredictionManager.authenticate(predictionApiKey);
+
+            trainClient = trainClient.withEndpoint("https://southcentralus.api.cognitive.microsoft.com");
+            predictionClient = tredictionClient.withEndpoint("https://southcentralus.api.cognitive.microsoft.com");
 
             runSample(trainClient, predictClient);
         } catch (Exception e) {
