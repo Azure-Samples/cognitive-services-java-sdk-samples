@@ -6,7 +6,7 @@ author: aahill
 
 # Java sample for the Bing Image Search SDK Quickstart ##
 
-This code sample compliments the [Bing Image Search Quickstart](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/image-sdk-java-quickstart) available on docs.microsoft.com. 
+This [code](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples/blob/master/Search/BingImageSearch/Quickstart/src/main/java/com/microsoft/azure/cognitiveservices/search/imagesearch/samples/BingImageSearchSample.java) sample compliments the [Bing Image Search Quickstart](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/image-sdk-java-quickstart) available on docs.microsoft.com.
 
 This Java application sends an image search query to the Bing Image Search API, parses the JSON response, and displays the URL of the first image returned, along with some other information.
 
