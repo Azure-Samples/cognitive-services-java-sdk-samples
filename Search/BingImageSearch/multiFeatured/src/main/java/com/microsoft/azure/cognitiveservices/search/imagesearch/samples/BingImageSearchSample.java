@@ -293,7 +293,7 @@ public class BingImageSearchSample {
             //=============================================================
             // Authenticate
 
-            System.getenv("AZURE_BING_SAMPLES_API_KEY");
+            final String subscriptionKey = System.getenv("AZURE_BING_SAMPLES_API_KEY");
 
             BingImageSearchAPI client = BingImageSearchManager.authenticate(subscriptionKey);
 
