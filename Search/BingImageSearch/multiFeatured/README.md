@@ -7,7 +7,6 @@ author: milismsft
 # Bing Image Search SDK Sample ##
 
 Sample [code](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples/blob/master/Search/BingImageSearch/multiFeatured/src/main/java/com/microsoft/azure/cognitiveservices/search/imagesearch/samples/BingImageSearchSample.java) for searching images using Bing Image Search, an Azure Cognitive Service.
-- Make sure to set AZURE_BING_SAMPLES_API_KEY based on your OS, then reopen your command prompt or IDE. If not, you might get an API key not found exception.
 - Search images for "canadian rockies" then verify number of results and print out pivot suggestion and query expansion.
 - Search images for "studio ghibli", filtered for animated GIFs and wide aspect and print out insightsToken, thumbnail url and web url.
 - Search for trending images then print out categories and tiles.
@@ -23,6 +22,7 @@ This project framework provides examples for the **Bing Image Search SDK** for t
 ### Prerequisites
 
 - A cognitive services API key with which to authenticate the SDK's calls. [Sign up here](https://azure.microsoft.com/en-us/services/cognitive-services/directory/) by navigating to the **Search** services and acquiring an API key. You can get a trial key for **free** which will expire after 30 days.
+- Make sure to set AZURE_BING_SAMPLES_API_KEY based on your OS, then reopen your command prompt or IDE. If not, you might get an API key not found exception.
 - Maven
 
 ### Quickstart
