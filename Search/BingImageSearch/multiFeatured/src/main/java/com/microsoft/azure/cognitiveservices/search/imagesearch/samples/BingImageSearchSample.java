@@ -293,6 +293,8 @@ public class BingImageSearchSample {
             //=============================================================
             // Authenticate
 
+            // Make sure to set AZURE_BING_SAMPLES_API_KEY based on your OS, then reopen your command prompt or IDE.
+            // If not, you might get an API key not found exception.
             final String subscriptionKey = System.getenv("AZURE_BING_SAMPLES_API_KEY");
 
             BingImageSearchAPI client = BingImageSearchManager.authenticate(subscriptionKey);
