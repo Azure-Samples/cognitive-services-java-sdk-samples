@@ -34,7 +34,6 @@ To get these samples running locally, simply get the pre-requisites above, then:
 4. mvn compile exec:java
 
 ## More information ##
-[Bing News Search API Documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/bing-news-search/)
 
 [http://azure.com/java](http://azure.com/java)
 

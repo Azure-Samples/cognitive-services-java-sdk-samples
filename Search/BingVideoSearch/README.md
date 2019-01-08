@@ -33,7 +33,6 @@ To get these samples running locally, simply get the pre-requisites above, then:
 4. mvn compile exec:java
 
 ## More information ##
-[Bing Video Search Documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/Bing-Video-Search/)
 
 [http://azure.com/java](http://azure.com/java)
 

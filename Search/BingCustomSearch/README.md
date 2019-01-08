@@ -6,7 +6,7 @@ author: milismsft
 
 # Bing Custom Search SDK Sample ##
 
-Sample [code](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples/blob/master/Search/BingCustomSearch/src/main/java/com/microsoft/azure/cognitiveservices/search/customsearch/samples/BingCustomSearchSample.java) for custom searching using Bing Custom Search, an Azure Cognitive Service.
+Sample code for custom searching using Bing Custom Search, an Azure Cognitive Service.
 - Custom search for "Xbox" and print out name and url for the first web page in the results list.
 
 
@@ -32,7 +32,6 @@ To get these samples running locally, simply get the pre-requisites above, then:
 5. mvn compile exec:java
 
 ## More information ##
-[Bing Custom Search Documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/bing-custom-search/)
 
 [http://azure.com/java](http://azure.com/java)
 
