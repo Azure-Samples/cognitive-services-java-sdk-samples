@@ -18,7 +18,7 @@ This project framework provides examples for the **Bing Custom Search SDK** for 
 
 ### Prerequisites
 
-- A cognitive services API key with which to authenticate the SDK's calls. [Sign up here](https://azure.microsoft.com/en-us/services/cognitive-services/directory/) by navigating to the **Search** services and acquiring an API key. You can get a trial key for **free** which will expire after 30 days.
+- A cognitive services API key with which to authenticate the SDK's calls. [Sign up here](https://azure.microsoft.com/en-us/services/cognitive-services/directory/) by navigating to the **Search** services and acquiring a Bing Custom Search API key. You can get a trial key for **free** which will expire after 30 days.
 - Maven
 
 ### Quickstart
@@ -27,12 +27,13 @@ To get these samples running locally, simply get the pre-requisites above, then:
 
 1. git clone https://github.com/Azure-Samples/cognitive-services-java-sdk-samples.git
 2. cd cognitive-services-java-sdk-samples/Search/BingCustomSearch
-3. set env variable AZURE_BING_SAMPLES_API_KEY to your cognitive services API key.
-4. set env variable AZURE_BING_SAMPLES_CUSTOM_CONFIG_ID to your custom configuration id.
+3. Either set a system environment variable named `AZURE_BING_SAMPLES_API_KEY` to your cognitive Services API key, or copy your key into the program. If you are going to set the AZURE_BING_SAMPLES_API_KEY environment variable, make sure to set it based on your OS, then reopen your command prompt or IDE. If not, you might get an API key not found exception.
+4. Set env variable AZURE_BING_SAMPLES_CUSTOM_CONFIG_ID to your custom configuration id. Can set to 1 if you do not have a custom config id.
 5. mvn compile exec:java
 
 ## More information ##
 
+[Custom Search using the Bing Custom Search SDK and Java](https://docs.microsoft.com/en-us/azure/cognitive-services/bing-custom-search/)
 [http://azure.com/java](http://azure.com/java)
 
 If you don't have a Microsoft Azure subscription you can get a FREE trial account [here](http://go.microsoft.com/fwlink/?LinkId=330212)
