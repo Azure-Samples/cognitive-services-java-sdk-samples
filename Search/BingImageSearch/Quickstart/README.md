@@ -7,7 +7,7 @@ author: aahill
 # Java sample for the Bing Image Search SDK Quickstart ##
 
 This [code](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples/blob/master/Search/BingImageSearch/Quickstart/src/main/java/com/microsoft/azure/cognitiveservices/search/imagesearch/samples/BingImageSearchSample.java) sample compliments the [Bing Image Search Quickstart](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/image-sdk-java-quickstart) available on docs.microsoft.com.
-
+- If you are going to set the AZURE_BING_SAMPLES_API_KEY environment variable, make sure to set it based on your OS, then reopen your command prompt or IDE. If not, you might get an API key not found exception.
 This Java application sends an image search query to the Bing Image Search API, parses the JSON response, and displays the URL of the first image returned, along with some other information.
 
 The [Bing Image Search API](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/) is an Azure Cognitive service, available from Microsoft.  
