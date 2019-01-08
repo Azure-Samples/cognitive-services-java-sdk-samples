@@ -146,7 +146,13 @@ public class BingNewsSearchSample {
             //=============================================================
             // Authenticate
 
+            // If you are going to set the AZURE_BING_SAMPLES_API_KEY environment variable, make sure you set it for your OS, then reopen your command prompt or IDE.
+            // If not, you may get an API key not found exception.
+            // IMPORTANT: if you have not set the `AZURE_BING_SAMPLES_API_KEY` environment variable to your cognitive services API key:
+            // 1. comment out the below line
             final String subscriptionKey = System.getenv("AZURE_BING_SAMPLES_API_KEY");
+            // 2. paste your cognitive services API key below, and uncomment the line
+            //final String subscriptionKey = "enter your key here";
 
             BingNewsSearchAPI bingNewsSearchAPIClient = BingNewsSearchManager.authenticate(subscriptionKey);
 
