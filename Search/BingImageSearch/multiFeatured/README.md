@@ -35,6 +35,7 @@ To get these samples running locally, simply get the pre-requisites above, then:
 
 ## More information ##
 
+[Search for images using the Bing Image Search SDK and Java](https://docs.microsoft.com/en-us/azure/cognitive-services/bing-image-search/image-sdk-java-quickstart)
 [http://azure.com/java](http://azure.com/java)
 
 If you don't have a Microsoft Azure subscription you can get a FREE trial account [here](http://go.microsoft.com/fwlink/?LinkId=330212)
