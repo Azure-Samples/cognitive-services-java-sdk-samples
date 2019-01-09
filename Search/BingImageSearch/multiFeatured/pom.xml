@@ -16,6 +16,7 @@
         <version>1.4.0</version>
         <configuration>
           <mainClass>com.microsoft.azure.cognitiveservices.search.imagesearch.samples.BingImageSearchSample</mainClass>
+          <cleanupDaemonThreads>false</cleanupDaemonThreads>
         </configuration>
       </plugin>
       <plugin>
@@ -49,6 +50,9 @@
       </plugin>
     </plugins>
   </build>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>com.microsoft.azure</groupId>
