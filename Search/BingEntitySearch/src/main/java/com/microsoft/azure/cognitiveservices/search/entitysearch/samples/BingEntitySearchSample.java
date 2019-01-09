@@ -175,7 +175,7 @@ public class BingEntitySearchSample {
             try {
                 SearchResponse errorQuery = client.bingEntities().search()
                     .withQuery("harry potter")
-                    .withMarket("no-ty")
+                    .withMarket("no-NO")
                     .execute();
             } catch (ErrorResponseException ex) {
                 // The status code of the error should be a good indication of what occurred. However, if you'd like more details, you can dig into the response.

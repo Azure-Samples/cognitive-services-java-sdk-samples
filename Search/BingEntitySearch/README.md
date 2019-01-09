@@ -35,6 +35,7 @@ To get these samples running locally, simply get the pre-requisites above, then:
 4. mvn compile exec:java
 
 ## More information ##
+[Bing Entity Search Documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/bing-entities-search/)
 
 [http://azure.com/java](http://azure.com/java)
 
