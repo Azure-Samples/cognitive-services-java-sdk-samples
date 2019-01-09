@@ -147,6 +147,7 @@ public class BingVideoSearchSample {
                             throw e;
                         }
                         Thread.sleep(1000);
+                        System.out.println("Resending request now...");
                     }
                 }
             } else {

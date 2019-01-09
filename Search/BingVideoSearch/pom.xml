@@ -16,6 +16,7 @@
         <version>1.4.0</version>
         <configuration>
           <mainClass>com.microsoft.azure.cognitiveservices.search.videosearch.samples.BingVideoSearchSample</mainClass>
+          <cleanupDaemonThreads>false</cleanupDaemonThreads>
         </configuration>
       </plugin>
       <plugin>
