@@ -117,6 +117,8 @@ public class BingEntitySearchSample {
 
                     if (e.response().code() == 429) {
                         System.out.println("You are getting a request exceeded error because you are using the free tier for this sample. Code will wait 1 second before resending request");
+                    } else {
+                        throw e;
                     }
 
                     if (i == maxTries) {
@@ -158,6 +160,8 @@ public class BingEntitySearchSample {
 
                     if (e.response().code() == 429) {
                         System.out.println("You are getting a request exceeded error because you are using the free tier for this sample. Code will wait for 1 second before resending request");
+                    } else {
+                        throw e;
                     }
                     if (i == maxTries) {
                         throw e;
@@ -211,6 +215,8 @@ public class BingEntitySearchSample {
 
                     if (e.response().code() == 429) {
                         System.out.println("You are getting a request exceeded error because you are using the free tier for this sample. Code will wait for 1 second before resending request");
+                    } else {
+                        throw e;
                     }
                     if (i == maxTries) {
                         throw e;
