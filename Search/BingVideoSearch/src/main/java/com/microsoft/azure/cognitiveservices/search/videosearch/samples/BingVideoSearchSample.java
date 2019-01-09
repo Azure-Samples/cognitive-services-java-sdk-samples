@@ -8,6 +8,7 @@ package com.microsoft.azure.cognitiveservices.search.videosearch.samples;
 
 import com.microsoft.azure.cognitiveservices.search.videosearch.BingVideoSearchAPI;
 import com.microsoft.azure.cognitiveservices.search.videosearch.BingVideoSearchManager;
+import com.microsoft.azure.cognitiveservices.search.videosearch.models.ErrorResponseException;
 import com.microsoft.azure.cognitiveservices.search.videosearch.models.Freshness;
 import com.microsoft.azure.cognitiveservices.search.videosearch.models.TrendingVideos;
 import com.microsoft.azure.cognitiveservices.search.videosearch.models.TrendingVideosCategory;
@@ -94,41 +95,60 @@ public class BingVideoSearchSample {
 
                 System.out.println(
                         String.format("Search detail for video id={firstVideo.VideoId}, name=%s", firstVideo.name()));
-                VideoDetails videoDetail = client.bingVideos().details()
-                    .withQuery("Bellevue Trailer")
-                    .withId(firstVideo.videoId())
-                    .withModules(modules)
-                    .withMarket("en-us")
-                    .execute();
+                int maxTries = 2;
+                for (int i = 1; i <= 2; i++) {
+                    try {
+                        VideoDetails videoDetail = client.bingVideos().details()
+                                .withQuery("Bellevue Trailer")
+                                .withId(firstVideo.videoId())
+                                .withModules(modules)
+                                .withMarket("en-us")
+                                .execute();
 
-                if (videoDetail != null) {
-                    if (videoDetail.videoResult() != null) {
-                        System.out.println(
-                                String.format("Expected video id: %s", videoDetail.videoResult().videoId()));
-                        System.out.println(
-                                String.format("Expected video name: %s", videoDetail.videoResult().name()));
-                        System.out.println(
-                                String.format("Expected video url: %s", videoDetail.videoResult().contentUrl()));
-                    } else {
-                        System.out.println("Couldn't find expected video!");
-                    }
+                        if (videoDetail != null) {
+                            if (videoDetail.videoResult() != null) {
+                                System.out.println(
+                                        String.format("Expected video id: %s", videoDetail.videoResult().videoId()));
+                                System.out.println(
+                                        String.format("Expected video name: %s", videoDetail.videoResult().name()));
+                                System.out.println(
+                                        String.format("Expected video url: %s", videoDetail.videoResult().contentUrl()));
+                            } else {
+                                System.out.println("Couldn't find expected video!");
+                            }
 
-                    if (videoDetail.relatedVideos() != null && videoDetail.relatedVideos().value() != null &&
-                            videoDetail.relatedVideos().value().size() > 0) {
-                        VideoObject firstRelatedVideo = videoDetail.relatedVideos().value().get(0);
+                            if (videoDetail.relatedVideos() != null && videoDetail.relatedVideos().value() != null &&
+                                    videoDetail.relatedVideos().value().size() > 0) {
+                                VideoObject firstRelatedVideo = videoDetail.relatedVideos().value().get(0);
+                                System.out.println(
+                                        String.format("Related video count: %d", videoDetail.relatedVideos().value().size()));
+                                System.out.println(
+                                        String.format("First related video id: %s", firstRelatedVideo.videoId()));
+                                System.out.println(
+                                        String.format("First related video name: %s", firstRelatedVideo.name()));
+                                System.out.println(
+                                        String.format("First related video url: %s", firstRelatedVideo.contentUrl()));
+                            } else {
+                                System.out.println("Couldn't find any related video!");
+                            }
+                        } else {
+                            System.out.println("Couldn't find detail about the video!");
+                        }
+                        break;
+                    } catch (ErrorResponseException e) {
                         System.out.println(
-                                String.format("Related video count: %d", videoDetail.relatedVideos().value().size() ));
-                        System.out.println(
-                                String.format("First related video id: %s", firstRelatedVideo.videoId()));
-                        System.out.println(
-                                String.format("First related video name: %s", firstRelatedVideo.name()));
-                        System.out.println(
-                                String.format("First related video url: %s", firstRelatedVideo.contentUrl()));
-                    } else {
-                        System.out.println("Couldn't find any related video!");
+                                String.format("Exception occurred, status code %s with reason %s.", e.response().code(), e.response().message()));
+
+                        if (e.response().code() == 429) {
+                            System.out.println("You are getting a request exceeded error because you are using the free tier for this sample. Code will wait 1 second before resending request");
+                        }
+
+                        if (i == maxTries) {
+                            throw e;
+                        }
+                        Thread.sleep(1000);
+                        System.out.println("Resending request now...");
                     }
-                } else {
-                    System.out.println("Couldn't find detail about the video!");
                 }
             } else {
                 System.out.println("Couldn't find video results!");
@@ -230,7 +250,13 @@ public class BingVideoSearchSample {
             //=============================================================
             // Authenticate
 
+            // If you are going to set the AZURE_BING_SAMPLES_API_KEY environment variable, make sure you set it for your OS, then reopen your command prompt or IDE.
+            // If not, you may get an API key not found exception.
+            // IMPORTANT: if you have not set the `AZURE_BING_SAMPLES_API_KEY` environment variable to your cognitive services API key:
+            // 1. comment out the below line
             final String subscriptionKey = System.getenv("AZURE_BING_SAMPLES_API_KEY");
+            // 2. paste your cognitive services API key below, and uncomment the line
+            //final String subscriptionKey = "enter your key here";
 
             BingVideoSearchAPI client = BingVideoSearchManager.authenticate(subscriptionKey);
 
