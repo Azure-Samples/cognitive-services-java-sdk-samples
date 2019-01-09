@@ -141,6 +141,8 @@ public class BingVisualSearchSample {
                             String.format("Exception occurred, status code %s with reason %s.", e.response().code(), e.response().message()));
                     if (e.response().code() == 401) {
                         System.out.println("Make sure that you are using the S9 pricing tier for the Bing Search v7 API for visual search.");
+                    } else {
+                        throw e;
                     }
                     Thread.sleep(1000);
                 }
