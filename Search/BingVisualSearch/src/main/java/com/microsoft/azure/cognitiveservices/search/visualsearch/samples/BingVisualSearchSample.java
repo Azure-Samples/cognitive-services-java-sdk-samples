@@ -36,7 +36,6 @@ public class BingVisualSearchSample {
      */
     public static boolean runSample(BingVisualSearchAPI client) {
         try {
-
             byte[] imageBytes = ByteStreams.toByteArray(BingVisualSearchSample.class.getResourceAsStream("/image.jpg"));
 
             Gson gson = new Gson();
@@ -47,30 +46,28 @@ public class BingVisualSearchSample {
             // This will send an image binary and print out the image insights token, the number of tags, the number
             // of actions, and the first action type
 
-            System.out.println("Search with a binary of dog image");
-            visualSearchResults = client.bingImages().visualSearch()
-                .withImage(imageBytes)
-                .execute();
+            try {
+                System.out.println("Search with a binary of dog image");
+                visualSearchResults = client.bingImages().visualSearch()
+                        .withImage(imageBytes)
+                        .execute();
 
-            PrintVisualSearchResults(visualSearchResults);
+                PrintVisualSearchResults(visualSearchResults);
 
 
-            //=============================================================
-            // This will send an image binary specifying the crop area and print out the image insights token, the
-            // number of tags, the number of actions, and the first action type
+                //=============================================================
+                // This will send an image binary specifying the crop area and print out the image insights token, the
+                // number of tags, the number of actions, and the first action type
 
-            System.out.println("Search with a binary of dog image using crop area");
-            CropArea cropArea = new CropArea()
-                .withTop(0.1)
-                .withBottom(0.5)
-                .withLeft(0.1)
-                .withRight(0.9);
-            ImageInfo imageInfo = new ImageInfo().withCropArea(cropArea);
-            visualSearchRequest = new VisualSearchRequest().withImageInfo(imageInfo);
-            System.out.println(gson.toJson(visualSearchRequest));
-            int maxTries = 2;
-            for (int i = 1; i <= 2; i++) {
-                try {
+                System.out.println("Search with a binary of dog image using crop area");
+                CropArea cropArea = new CropArea()
+                        .withTop(0.1)
+                        .withBottom(0.5)
+                        .withLeft(0.1)
+                        .withRight(0.9);
+                ImageInfo imageInfo = new ImageInfo().withCropArea(cropArea);
+                visualSearchRequest = new VisualSearchRequest().withImageInfo(imageInfo);
+                System.out.println(gson.toJson(visualSearchRequest));
                     visualSearchResults = client.bingImages().visualSearch()
                             .withImage(imageBytes)
                             .withKnowledgeRequest(gson.toJson(visualSearchRequest))
@@ -139,22 +136,18 @@ public class BingVisualSearchSample {
                     PrintVisualSearchResults(visualSearchResults);
 
                     return true;
-                } catch (ErrorResponseException e) {
+                }  catch (ErrorResponseException e) {
                     System.out.println(
                             String.format("Exception occurred, status code %s with reason %s.", e.response().code(), e.response().message()));
                     if (e.response().code() == 401) {
                         System.out.println("Make sure that you are using the S9 pricing tier for the Bing Search v7 API for visual search.");
                     }
-                    if (i == maxTries) {
-                        throw e;
-                    }
                     Thread.sleep(1000);
                 }
+            } catch (Exception f) {
+                System.out.println(f.getMessage());
+                f.printStackTrace();
             }
-        } catch (Exception f) {
-            System.out.println(f.getMessage());
-            f.printStackTrace();
-        }
         return false;
     }
 
