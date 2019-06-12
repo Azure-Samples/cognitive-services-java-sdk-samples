@@ -1,0 +1,21 @@
+Include these libraries in your Find Similar sample:
+
+ * https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-faceapi/1.0.2-beta
+ * https://mvnrepository.com/artifact/com.microsoft.azure/azure-client-runtime/1.6.7
+ * https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+ * https://mvnrepository.com/artifact/ch.qos.logback/logback-core
+ * https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
+ * https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+ * https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+ * https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-joda
+ * https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310
+ * https://mvnrepository.com/artifact/com.google.guava/guava
+ * https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib
+ * https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
+ * https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp-urlconnection
+ * https://mvnrepository.com/artifact/com.squareup.okio/okio
+ * https://mvnrepository.com/artifact/com.squareup.retrofit2/adapter-rxjava
+ * https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
+ * https://mvnrepository.com/artifact/io.reactivex/rxjava
+ * https://mvnrepository.com/artifact/joda-time/joda-time
+ * https://mvnrepository.com/artifact/org.slf4j/slf4j-api
