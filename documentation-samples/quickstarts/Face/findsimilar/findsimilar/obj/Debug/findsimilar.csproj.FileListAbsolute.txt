@@ -1,0 +1,32 @@
+C:\Users\v-wiazur\Desktop\findsimilar\findsimilar\bin\Debug\findsimilar.exe.config
+C:\Users\v-wiazur\Desktop\findsimilar\findsimilar\bin\Debug\findsimilar.exe
+C:\Users\v-wiazur\Desktop\findsimilar\findsimilar\bin\Debug\findsimilar.pdb
+C:\Users\v-wiazur\Desktop\findsimilar\findsimilar\bin\Debug\Microsoft.Azure.CognitiveServices.Vision.Face.dll
+C:\Users\v-wiazur\Desktop\findsimilar\findsimilar\bin\Debug\Microsoft.Rest.ClientRuntime.Azure.dll
+C:\Users\v-wiazur\Desktop\findsimilar\findsimilar\bin\Debug\Microsoft.Rest.ClientRuntime.dll
+C:\Users\v-wiazur\Desktop\findsimilar\findsimilar\bin\Debug\Newtonsoft.Json.dll
+C:\Users\v-wiazur\Desktop\findsimilar\findsimilar\bin\Debug\Microsoft.Azure.CognitiveServices.Vision.Face.xml
+C:\Users\v-wiazur\Desktop\findsimilar\findsimilar\bin\Debug\Microsoft.Rest.ClientRuntime.xml
+C:\Users\v-wiazur\Desktop\findsimilar\findsimilar\bin\Debug\Microsoft.Rest.ClientRuntime.Azure.xml
+C:\Users\v-wiazur\Desktop\findsimilar\findsimilar\bin\Debug\Newtonsoft.Json.xml
+C:\Users\v-wiazur\Desktop\findsimilar\findsimilar\obj\Debug\findsimilar.csprojAssemblyReference.cache
+C:\Users\v-wiazur\Desktop\findsimilar\findsimilar\obj\Debug\findsimilar.csproj.CoreCompileInputs.cache
+C:\Users\v-wiazur\Desktop\findsimilar\findsimilar\obj\Debug\findsimilar.csproj.CopyComplete
+C:\Users\v-wiazur\Desktop\findsimilar\findsimilar\obj\Debug\findsimilar.exe
+C:\Users\v-wiazur\Desktop\findsimilar\findsimilar\obj\Debug\findsimilar.pdb
+C:\Users\v-wiazur\Desktop\All Face\findsimilar\findsimilar\bin\Debug\findsimilar.exe.config
+C:\Users\v-wiazur\Desktop\All Face\findsimilar\findsimilar\bin\Debug\findsimilar.exe
+C:\Users\v-wiazur\Desktop\All Face\findsimilar\findsimilar\bin\Debug\findsimilar.pdb
+C:\Users\v-wiazur\Desktop\All Face\findsimilar\findsimilar\bin\Debug\Microsoft.Azure.CognitiveServices.Vision.Face.dll
+C:\Users\v-wiazur\Desktop\All Face\findsimilar\findsimilar\bin\Debug\Microsoft.Rest.ClientRuntime.Azure.dll
+C:\Users\v-wiazur\Desktop\All Face\findsimilar\findsimilar\bin\Debug\Microsoft.Rest.ClientRuntime.dll
+C:\Users\v-wiazur\Desktop\All Face\findsimilar\findsimilar\bin\Debug\Newtonsoft.Json.dll
+C:\Users\v-wiazur\Desktop\All Face\findsimilar\findsimilar\bin\Debug\Microsoft.Azure.CognitiveServices.Vision.Face.xml
+C:\Users\v-wiazur\Desktop\All Face\findsimilar\findsimilar\bin\Debug\Microsoft.Rest.ClientRuntime.xml
+C:\Users\v-wiazur\Desktop\All Face\findsimilar\findsimilar\bin\Debug\Microsoft.Rest.ClientRuntime.Azure.xml
+C:\Users\v-wiazur\Desktop\All Face\findsimilar\findsimilar\bin\Debug\Newtonsoft.Json.xml
+C:\Users\v-wiazur\Desktop\All Face\findsimilar\findsimilar\obj\Debug\findsimilar.csprojAssemblyReference.cache
+C:\Users\v-wiazur\Desktop\All Face\findsimilar\findsimilar\obj\Debug\findsimilar.csproj.CoreCompileInputs.cache
+C:\Users\v-wiazur\Desktop\All Face\findsimilar\findsimilar\obj\Debug\findsimilar.csproj.CopyComplete
+C:\Users\v-wiazur\Desktop\All Face\findsimilar\findsimilar\obj\Debug\findsimilar.exe
+C:\Users\v-wiazur\Desktop\All Face\findsimilar\findsimilar\obj\Debug\findsimilar.pdb
