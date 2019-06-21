@@ -166,10 +166,8 @@ public class Quickstart {
 			// GetStatus returns a list of training statuses, one for each model.
 			// Loop through them and make sure all are done.
 			waiting = false;
-
 			for (ModelTrainingInfo info : result) { 
 				String status = info.details().status();
-				System.out.println("Status: " + status);
 				if (status.equals("Queued") || status.equals("InProgress")) {
 					waiting = true;
 				}
@@ -177,7 +175,6 @@ public class Quickstart {
 					System.out.println("Training operation failed. Reason: " + info.details().failureReason());
 				}
 			}
-			System.out.println("Waiting: " + waiting.toString());
 			if (true == waiting) {
 				System.out.println("Waiting 10 seconds for training to complete...");
 				Thread.sleep(10000);
