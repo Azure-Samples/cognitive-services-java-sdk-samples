@@ -5,10 +5,10 @@
  *   - Download/clone the project.
  *   - From your Azure account, get your subscription key and region, then
  *     set as environment variables with the names COMPUTER_VISION_SUBSCRIPTION_KEY and COMPUTER_VISION_REGION.
- *   - Add images (landmark.jpg and printed_text.jpg) to your local 'resources' folder from here: 
- * https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/ComputerVision/Images
+ *   - Create a 'src/main/java/resources' folder and add images (landmark.jpg and printed_text.jpg) from here: 
+ *     https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/ComputerVision/Images
  *   - Install the Microsoft Cognitive Services Computer Vision libraries:
- * https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-computervision
+ *     https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-computervision
  * 
  * To Run:
  *   - This project can be compiled and run with Maven.
