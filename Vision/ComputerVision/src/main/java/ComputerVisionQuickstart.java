@@ -75,13 +75,13 @@ class ComputerVisionQuickstart {
 
     // Analyze local and remote images
     DescribeImage(computerVisionClient, localImagePath, remoteImageURL);
-  	CategorizeImage(computerVisionClient, localImagePath, remoteImageURL);
-  	TagImage(computerVisionClient, localImagePath, remoteImageURL);
-  	DetectFacesInImage(computerVisionClient, localImagePath, remoteImageURL);
-  	DetectAdultOrRacyContentInImage(computerVisionClient, localImagePath, remoteImageURL);
-  	DetectColorSchemeInImage(computerVisionClient, localImagePath, remoteImageURL);
-  	DetectDomainSpecificContentInImage(computerVisionClient, localImagePath, remoteImageURL);
-  	DetectImageTypesInImage(computerVisionClient, localImagePath, remoteImageURL);
+    CategorizeImage(computerVisionClient, localImagePath, remoteImageURL);
+    TagImage(computerVisionClient, localImagePath, remoteImageURL);
+    DetectFacesInImage(computerVisionClient, localImagePath, remoteImageURL);
+    DetectAdultOrRacyContentInImage(computerVisionClient, localImagePath, remoteImageURL);
+    DetectColorSchemeInImage(computerVisionClient, localImagePath, remoteImageURL);
+    DetectDomainSpecificContentInImage(computerVisionClient, localImagePath, remoteImageURL);
+    DetectImageTypesInImage(computerVisionClient, localImagePath, remoteImageURL);
 
     // Analyze local and remote text-image for recognizing text with OCR
     RecognizeTextOCR(computerVisionClient, localTextImagePath, remoteTextImageURL);
@@ -192,7 +192,6 @@ class ComputerVisionQuickstart {
     System.out.println();
   }
   //  END - Categorize Image
-
 
   /**  
    * TAG IMAGE:
