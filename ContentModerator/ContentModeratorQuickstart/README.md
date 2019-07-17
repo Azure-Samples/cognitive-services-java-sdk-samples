@@ -24,8 +24,9 @@ This sample code shows you how to moderate images with Content Moderator.
 
 ## Prerequisites
 
-- Java development environment
-- Maven
+- Java development environment : (IDE or command line)
+- Maven : make sure Maven is installed: https://maven.apache.org/download.cgi
+- Download Content Moderator SDK from Maven (for IDE): https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-contentmoderator
 
 ## Setup
 
@@ -33,13 +34,14 @@ This sample code shows you how to moderate images with Content Moderator.
 
 ## Modifying the Sample for your Configuration
 
-1. Store your Content Moderator API key in the `AZURE_CONTENTMODERATOR_KEY` environment variable.
-2. Store your Azure endpoint in the `AZURE_ENDPOINT` environment variable. (optional)
+1. Store your Content Moderator API key in the `CONTENT_MODERATOR_SUBSCRIPTION_KEY` environment variable.
+2. Store your Content Moderator base endpoint in the `CONTENT_MODERATOR_ENDPOINT` environment variable. For example: `https://westus.api.cognitive.microsoft.com`. Be sure to use the correct region your subscription is in, in the URL.
 
 ## Building and Running the Sample
-
-1. From the command line, navigate to the samples root directory: `...\cognitive-services-samples-pr\java\ContentModerator`.
+### From command line:
+1. Navigate to the example's root directory.
 2. Enter `mvn compile exec:java -Dexec.cleanupDaemonThreads=false`.
+   Maven will automatically install all dependencies.
 
 ## Next steps
 
