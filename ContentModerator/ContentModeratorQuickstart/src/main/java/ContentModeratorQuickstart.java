@@ -86,6 +86,7 @@ public class ContentModeratorQuickstart {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();            
             System.out.println("adding imageData to file: " + gson.toJson(evaluationData).toString());
             writer.write(gson.toJson(evaluationData).toString());
+            writer.close();
 
         }   catch (Exception e) {
             System.out.println(e.getMessage());
