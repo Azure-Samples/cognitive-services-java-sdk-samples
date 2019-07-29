@@ -1,3 +1,4 @@
+// <snippet_imports>
 import com.google.gson.*;
 
 import com.microsoft.azure.cognitiveservices.vision.contentmoderator.*;
@@ -6,6 +7,7 @@ import com.microsoft.azure.cognitiveservices.vision.contentmoderator.models.*;
 import java.io.*;
 import java.lang.Object.*;
 import java.util.*;
+// </snippet_imports>
 
 /** 
  * 1. Obtain Azure Face resource 
@@ -22,6 +24,7 @@ import java.util.*;
 
 public class ContentModeratorQuickstart {
 
+    // <snippet_evaluationdata>
     // Contains the image moderation results for an image, including text and face detection.
     public static class EvaluationData {
         // The URL of the evaluated image.
@@ -33,17 +36,21 @@ public class ContentModeratorQuickstart {
         // The face detection results;
         public FoundFaces FaceDetection;
     }
+    // </snippet_evaluationdata>
 
     public static void main(String[] args) {  
+        // <snippet_client>
         /**
          * Authenticate
          */
         // Create a variable called AZURE_CONTENTMODERATOR_KEY in your environment settings, with your key as its value.
-        // Replace the region (westus) with your own, if needed.
+        // Replace the first part ("westus") with your own, if needed.
         ContentModeratorClient client = ContentModeratorManager
             .authenticate(new AzureRegionBaseUrl()
             .fromString("https://westus.api.cognitive.microsoft.com"), System.getenv("AZURE_CONTENTMODERATOR_KEY"));
-        
+        // </snippet_client>
+
+        // <snippet_imagemod>
         // Create an object in which to store the image moderation results.
         List<EvaluationData> evaluationData = new ArrayList<EvaluationData>();
         
@@ -92,6 +99,7 @@ public class ContentModeratorQuickstart {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
+    // </snippet_imagemod>
     }
 } 
 // END - Moderate Image with URL images in a file  
