@@ -10,13 +10,18 @@ import java.util.*;
 // </snippet_imports>
 
 /** 
- * 1. Obtain Azure Face resource 
- * 2. Ensure correct Java version, ex: Java 8 or later
- * 3. Follow IDE or command line instruction
- *      For Maven: install and configure - https://maven.apache.org/install.html 
- *	      - To list dependencies for this sample, execute from command line: mvn dependency:list 
- *	      - From ModerateImages folder: mvn compile exec:java -Dexec.cleanupDaemonThreads=false
- * 4. Add your Face subscription key and endpoint region (replace 'westus', if necessary)
+ * Prerequisites:
+ * 1. Obtain an Azure Content Moderator resource 
+ * 2. Clone or download this repo: https://github.com/Azure-Samples/cognitive-services-java-sdk-samples.git
+ * 3. Use Java 8 or later
+ * 4. Set and add your Content Moderator subscription key and endpoint environment variables in the authenticate section below.
+ * 
+ * How to run:
+ *   Run in your favorite IDE or...
+ *   To use the command line:
+ *      - Make sure Maven is installed: https://maven.apache.org/install.html 
+ *	    - Run from the ContentModerator folder: mvn compile exec:java -Dexec.cleanupDaemonThreads=false
+ *      - All dependencies will be automatically included. To list them (if desired): mvn dependency:list 
  * 
  * This sample reads two URL images from file, then moderates them. A successful response shows
  * a JSON representation of the moderation results.
@@ -43,11 +48,11 @@ public class ContentModeratorQuickstart {
         /**
          * Authenticate
          */
-        // Create a variable called AZURE_CONTENTMODERATOR_KEY in your environment settings, with your key as its value.
-        // Replace the first part ("westus") with your own, if needed.
+        // Create a variable called CONTENT_MODERATOR_SUBSCRIPTION_KEY in your environment settings, with your key as its value.
+        // Create an endpoint environment variables too, replace the first part ("westus") with your own, if needed.
         ContentModeratorClient client = ContentModeratorManager
             .authenticate(new AzureRegionBaseUrl()
-            .fromString("https://westus.api.cognitive.microsoft.com"), System.getenv("AZURE_CONTENTMODERATOR_KEY"));
+            .fromString("CONTENT_MODERATOR_ENDPOINT"), System.getenv("CONTENT_MODERATOR_SUBSCRIPTION_KEY"));
         // </snippet_client>
 
         // <snippet_imagemod_iterate
