@@ -112,7 +112,6 @@ public class ContentModeratorQuickstart {
             e.printStackTrace();
         }
         // </snippet_imagemod_catch>
-    // </snippet_imagemod>
     }
 } 
 // END - Moderate Image with URL images in a file  
