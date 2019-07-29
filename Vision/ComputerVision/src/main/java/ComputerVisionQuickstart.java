@@ -3,7 +3,8 @@
  * 
  * Prerequisites:
  *   - Download/clone the project.
- *   - From your Azure account, get your subscription key and region, then
+ *   - From your Azure account, get your subscription key and the endpoint, which should look similar to: 
+       https://westus.api.cognitive.microsoft.com/ (make sure your region matches your subscription), then
  *     set as environment variables with the names COMPUTER_VISION_SUBSCRIPTION_KEY and COMPUTER_VISION_REGION.
  *   - Create a 'src/main/java/resources' folder and add images (landmark.jpg and printed_text.jpg) from here: 
  *     https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/ComputerVision/Images
@@ -61,7 +62,7 @@ class ComputerVisionQuickstart {
       System.exit(0);
     }
 
-    String computerVisionRegion = System.getenv("COMPUTER_VISION_REGION");
+    String computerVisionRegion = System.getenv("COMPUTER_VISION_ENDPOINT");
     if (computerVisionRegion == null) {
       System.out.println("\n\nPlease set the COMPUTERVISION_REGION environment variable.\n**Note that you might need to restart your shell or IDE.**\n");
       System.exit(0);
