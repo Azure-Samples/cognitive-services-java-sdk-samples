@@ -20,7 +20,7 @@ import java.util.*;
  *   Run in your favorite IDE or...
  *   To use the command line:
  *      - Make sure Maven is installed: https://maven.apache.org/install.html 
- *	    - Run from the ContentModerator folder: mvn compile exec:java -Dexec.cleanupDaemonThreads=false
+ *      - Run from the ContentModerator folder: mvn compile exec:java -Dexec.cleanupDaemonThreads=false
  *      - All dependencies will be automatically included. To list them (if desired): mvn dependency:list 
  * 
  * This sample reads two URL images from file, then moderates them. A successful response shows
