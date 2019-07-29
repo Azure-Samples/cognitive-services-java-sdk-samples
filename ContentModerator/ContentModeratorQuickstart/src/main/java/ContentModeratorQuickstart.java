@@ -50,7 +50,7 @@ public class ContentModeratorQuickstart {
             .fromString("https://westus.api.cognitive.microsoft.com"), System.getenv("AZURE_CONTENTMODERATOR_KEY"));
         // </snippet_client>
 
-        // <snippet_imagemod>
+        // <snippet_imagemod_iterate
         // Create an object in which to store the image moderation results.
         List<EvaluationData> evaluationData = new ArrayList<EvaluationData>();
         
@@ -69,23 +69,33 @@ public class ContentModeratorQuickstart {
                     url.withValue(line);
                     EvaluationData imageData = new EvaluationData(); 
                     imageData.ImageUrl = url.value();
+                    // </snippet_imagemod_iterate>
 
+                    // <snippet_imagemod_ar>
                     // Evaluate for adult and racy content.
                     imageData.ImageModeration = client.imageModerations().evaluateUrlInput("application/json", url, new EvaluateUrlInputOptionalParameter().withCacheImage(true));
                     Thread.sleep(1000);
+                    // </snippet_imagemod_ar>
 
+                    // <snippet_imagemod_text>
                     // Detect and extract text.
                     imageData.TextDetection = client.imageModerations().oCRUrlInput("eng", "application/json", url, new OCRUrlInputOptionalParameter().withCacheImage(true));
                     Thread.sleep(1000);
+                    // </snippet_imagemod_text>
 
+                    // <snippet_imagemod_faces>
                     // Detect faces.
                     imageData.FaceDetection = client.imageModerations().findFacesUrlInput("application/json", url, new FindFacesUrlInputOptionalParameter().withCacheImage(true));
                     Thread.sleep(1000);
+                    // </snippet_imagemod_faces>
 
+                    // <snippet_imagemod_storedata>
                     evaluationData.add(imageData);
                 }
             }
+            // </snippet_imagemod_storedata>
 
+            // <snippet_imagemod_printdata>
             // Save the moderation results to a file.
             // ModerationOutput.json is the file to contain the output from the evaluation.
             // Relative paths are relative to the execution directory.
@@ -94,11 +104,14 @@ public class ContentModeratorQuickstart {
             System.out.println("adding imageData to file: " + gson.toJson(evaluationData).toString());
             writer.write(gson.toJson(evaluationData).toString());
             writer.close();
+            // </snippet_imagemod_printdata>
 
+        // <snippet_imagemod_catch>
         }   catch (Exception e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
+        // </snippet_imagemod_catch>
     // </snippet_imagemod>
     }
 } 
