@@ -50,7 +50,7 @@ public class ContentModeratorQuickstart {
             .fromString("https://westus.api.cognitive.microsoft.com"), System.getenv("AZURE_CONTENTMODERATOR_KEY"));
         // </snippet_client>
 
-        // <snippet_imagemod_iterate
+        // <snippet_imagemod_iterate>
         // Create an object in which to store the image moderation results.
         List<EvaluationData> evaluationData = new ArrayList<EvaluationData>();
         
