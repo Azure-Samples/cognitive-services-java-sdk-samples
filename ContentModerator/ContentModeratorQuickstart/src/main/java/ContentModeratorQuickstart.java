@@ -55,7 +55,7 @@ public class ContentModeratorQuickstart {
             .fromString("CONTENT_MODERATOR_ENDPOINT"), System.getenv("CONTENT_MODERATOR_SUBSCRIPTION_KEY"));
         // </snippet_client>
 
-        // <snippet_imagemod_iterate
+        // <snippet_imagemod_iterate>
         // Create an object in which to store the image moderation results.
         List<EvaluationData> evaluationData = new ArrayList<EvaluationData>();
         
