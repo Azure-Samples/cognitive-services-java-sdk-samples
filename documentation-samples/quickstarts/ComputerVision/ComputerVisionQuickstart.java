@@ -16,7 +16,8 @@ public class ComputerVisionQuickstarts
         RunQuickstarts();
     }
 
-    /*  This Quickstart for the Azure Cognitive Services Computer Vision API shows how to analyze
+    /**  
+     *  This Quickstart for the Azure Cognitive Services Computer Vision API shows how to analyze
      *  an image both locally and from a URL.
      *  Analyzing an image includes:
      *  - Displaying image captions and confidence values
@@ -28,40 +29,17 @@ public class ComputerVisionQuickstarts
      *  - Displaying any celebrities detected in the image and their bounding boxes
      *  - Displaying any landmarks detected in the image and their bounding boxes
      *  - Displaying what type of clip art or line drawing the image is
-     *
      */
 
-
     public static void RunQuickstarts()
-    {
-        /*  Configure the local environment:
-         *
-         *  Set the AZURE_COMPUTERVISION_API_KEY and AZURE_REGION environment variables on your
-         *  local machine using the appropriate method for your preferred command shell.
-         *
-         *  For AZURE_REGION, use the same region you used to get your subscription keys.
-         ***Can we link (or just put the URL here) to the docs for finding your region?
-         *
-         *  Note that environment variables cannot contain quotation marks, so the quotation marks
-         *  are included in the code below to stringify them.
-         *
-         *  Note that after setting these environment variables in your preferred command shell,
-         *  you will need to close and then re-open your command shell.
-         */
+    {       
+        // Add your Computer Vision subscription key and endpoint to your environment variables.
+        // After setting, close and then re-open your command shell or project.
+        String subscriptionKey = System.getenv("COMPUTER_VISION_SUBSCRIPTION_KEY");
+        String endpoint = System.getenv("COMPUTER_VISION_ENDPOINT");
 
-        String azureComputerVisionApiKey = System.getenv("AZURE_COMPUTERVISION_API_KEY");
-        String azureRegion = System.getenv("AZURE_REGION");
-        //  END - Configure the local environment.
-
-
-        /*  Create an authenticated Computer Vision client:
-         *
-         *  Concatenate the Azure region with the Azure base URL to create the endpoint URL, and
-         *  then create an authenticated client with the API key and the endpoint URL.
-         */
-
-        String endpointUrl = ("https://").concat(azureRegion).concat(".api.cognitive.microsoft.com");
-        ComputerVisionClient compVisClient = ComputerVisionManager.authenticate(azureComputerVisionApiKey).withEndpoint(endpointUrl);
+        // Create an authenticated Computer Vision client
+        ComputerVisionClient compVisClient = ComputerVisionManager.authenticate(subscriptionKey).withEndpoint(endpoint);
         //  END - Create an authenticated Computer Vision client.
 
 
