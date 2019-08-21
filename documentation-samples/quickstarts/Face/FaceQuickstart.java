@@ -7,16 +7,19 @@ import java.util.*;
 import java.net.*;
 
 /**
- * Libraries needed: use these until the Face SDK is updated: see dependencies.txt for list of libraries
+ * Libraries needed (use these until the Face SDK is updated): 
+ * see dependencies.txt for list of libraries, include these .jar files in your lib folder.
  * To compile and run, enter the following at a command prompt:
- *   javac FindSimilar.java -cp .;lib\*
- *   java -cp .;lib\* FindSimilar
- * This presumes your libraries are stored in a folder named "lib" in the same folder as MainClass.java. If not, adjust the -cp value accordingly.
+ *   javac FaceQuickstart.java -cp .;lib\*
+ *   java -cp .;lib\* FaceQuickstart
+ * This presumes your libraries are stored in a folder named "lib" in the same folder as MainClass.java. 
+ * If not, adjust the -cp value accordingly.
  *
- * Note If you run this sample with JRE 9+, you may encounter the following issue: https://github.com/Azure/autorest-clientruntime-for-java/issues/569 which results in the following output:
+ * Note If you run this sample with JRE 9+, you may encounter the following issue: 
+ * https://github.com/Azure/autorest-clientruntime-for-java/issues/569 which results in the following output:
  * WARNING: An illegal reflective access operation has occurred ... (plus several more warnings)
  *
- * This should not prevent the sample from running correctly.
+ * This should not prevent the sample from running correctly, so ignore it.
  */
 
 public class FaceQuickstart {
