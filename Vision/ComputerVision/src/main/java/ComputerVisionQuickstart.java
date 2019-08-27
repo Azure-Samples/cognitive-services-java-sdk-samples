@@ -1,11 +1,18 @@
+import com.microsoft.azure.cognitiveservices.vision.computervision.*;
+import com.microsoft.azure.cognitiveservices.vision.computervision.models.*;
+
+import java.io.File;
+import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.List;
+
 /** 
  * Computer Vision Quickstart - Java
  * 
  * Prerequisites:
  *   - Download/clone the project.
- *   - From your Azure account, get your subscription key and the endpoint, which should look similar to: 
-       https://westus.api.cognitive.microsoft.com/ (make sure your region matches your subscription), then
- *     set as environment variables with the names COMPUTER_VISION_SUBSCRIPTION_KEY and COMPUTER_VISION_REGION.
+ *   - From your Azure account, get your subscription key and the endpoint, and add them as
+       environment variables named COMPUTER_VISION_SUBSCRIPTION_KEY and COMPUTER_VISION_ENDPOINT.
  *   - Create a 'src/main/java/resources' folder and add images (landmark.jpg and printed_text.jpg) from here: 
  *     https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/ComputerVision/Images
  *   - Install the Microsoft Cognitive Services Computer Vision libraries:
@@ -31,15 +38,6 @@
  * NOTE: Ignore the "Warning..." text in the console when run. The sample still runs fine despite it.
  */
 
-import com.microsoft.azure.cognitiveservices.vision.computervision.*;
-import com.microsoft.azure.cognitiveservices.vision.computervision.models.*;
-
-import java.io.File;
-import java.nio.file.Files;
-
-import java.util.ArrayList;
-import java.util.List;
-
 class ComputerVisionQuickstart {
   public static void main(String[] args) {
 
@@ -56,20 +54,22 @@ class ComputerVisionQuickstart {
      * AUTHENTICATE
      * Create a client that authorizes your Computer Vision subscription key and region.
      */	
-    String computerVisionKey = System.getenv("COMPUTER_VISION_SUBSCRIPTION_KEY");
-    if (computerVisionKey == null) {
-      System.out.println("\n\nPlease set the COMPUTER_VISION_SUBSCRIPTION_KEY environment variable.\n**Note that you might need to restart your shell or IDE.**\n");
+    String subscriptionKey = System.getenv("COMPUTER_VISION_SUBSCRIPTION_KEY");
+    if (subscriptionKey != "COMPUTER_VISION_SUBSCRIPTION_KEY") {
+      System.out.println("\n\nPlease set the COMPUTER_VISION_SUBSCRIPTION_KEY environment variable." +
+      "\n**You might need to restart your shell or IDE after setting it.**\n");
       System.exit(0);
     }
 
-    String computerVisionRegion = System.getenv("COMPUTER_VISION_ENDPOINT");
-    if (computerVisionRegion == null) {
-      System.out.println("\n\nPlease set the COMPUTERVISION_REGION environment variable.\n**Note that you might need to restart your shell or IDE.**\n");
+    String endpoint = System.getenv("COMPUTER_VISION_ENDPOINT");
+    if (endpoint != "COMPUTER_VISION_ENDPOINT") {
+      System.out.println("\n\nPlease set the COMPUTER_VISION_ENDPOINT environment variable." +
+      "\n**You might need to restart your shell or IDE after setting it.**\n");
       System.exit(0);
     }
 
-    String endpointURL = ("https://").concat(computerVisionRegion).concat(".api.cognitive.microsoft.com");
-    ComputerVisionClient computerVisionClient = ComputerVisionManager.authenticate(computerVisionKey).withEndpoint(endpointURL);
+    ComputerVisionClient computerVisionClient = 
+            ComputerVisionManager.authenticate(subscriptionKey).withEndpoint(endpoint);
     /**
      * END - Authenticate
      */
