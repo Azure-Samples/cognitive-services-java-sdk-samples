@@ -6,22 +6,19 @@ import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
-/** 
+/**
  * Computer Vision Quickstart - Java
  * 
  * Prerequisites:
- *   - Download/clone the project.
+ *   - Download/clone this repo: https://github.com/Azure-Samples/cognitive-services-java-sdk-samples.git
  *   - From your Azure account, get your subscription key and the endpoint, and add them as
        environment variables named COMPUTER_VISION_SUBSCRIPTION_KEY and COMPUTER_VISION_ENDPOINT.
  *   - Create a 'src/main/java/resources' folder and add images (landmark.jpg and printed_text.jpg) from here: 
  *     https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/ComputerVision/Images
- *   - Install the Microsoft Cognitive Services Computer Vision libraries:
- *     https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-computervision
  * 
  * To Run:
- *   - This project can be compiled and run with Maven.
- *   - This command will collect all dependencies for the above Microsoft library:
- *       mvn compile exec:java -Dexec.cleanupDaemonThreads=false
+ *   - cd to cognitive-services-java-sdk-samples\Vision\ComputerVision
+ *   - mvn compile exec:java
  * 
  * This quickstart performs the following tasks with both local and URL images:
  *   - Authenticate: creates a single client for use with all examples.
