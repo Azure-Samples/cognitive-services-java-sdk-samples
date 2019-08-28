@@ -55,14 +55,14 @@ class ComputerVisionQuickstart {
      * Create a client that authorizes your Computer Vision subscription key and region.
      */	
     String subscriptionKey = System.getenv("COMPUTER_VISION_SUBSCRIPTION_KEY");
-    if (subscriptionKey != "COMPUTER_VISION_SUBSCRIPTION_KEY") {
+    if (subscriptionKey == null) {
       System.out.println("\n\nPlease set the COMPUTER_VISION_SUBSCRIPTION_KEY environment variable." +
       "\n**You might need to restart your shell or IDE after setting it.**\n");
       System.exit(0);
     }
 
     String endpoint = System.getenv("COMPUTER_VISION_ENDPOINT");
-    if (endpoint != "COMPUTER_VISION_ENDPOINT") {
+    if (endpoint == null) {
       System.out.println("\n\nPlease set the COMPUTER_VISION_ENDPOINT environment variable." +
       "\n**You might need to restart your shell or IDE after setting it.**\n");
       System.exit(0);
