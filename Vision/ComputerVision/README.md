@@ -11,22 +11,23 @@ Sample code for image classification and object detection for Computer Vision, a
 
 ## Features
 
-This project framework provides examples for the **Computer Vision SDK** for the [Computer Vision API](https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/)
+This project framework provides examples for the **Computer Vision SDK** for the [Computer Vision API](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/)
 
 ## Getting Started
 
 ### Prerequisites
 
-- An account at [Custom Vision Service](https://www.customvision.ai)
+- An Azure Computer Vision account to get your subscription key and endpoint
 - Maven
 
 ### Quickstart
 
-To get these samples running locally, simply get the pre-requisites above, then:
+To run these samples locally:
 
 1. git clone https://github.com/Azure-Samples/cognitive-services-java-sdk-samples.git
 2. cd cognitive-services-java-sdk-samples/Vision/ComputerVision
-3. set env variable AZURE_COMPUTERVISION_API_KEY to your cognitive services API key.
+3. set environment variable COMPUTER_VISION_SUBSCRIPTION_KEY with your subscription key
+4. set environment variable COMPUTER_VISION_ENDPOINT with your endpoint
 4. mvn compile exec:java
 
 ## More information ##
