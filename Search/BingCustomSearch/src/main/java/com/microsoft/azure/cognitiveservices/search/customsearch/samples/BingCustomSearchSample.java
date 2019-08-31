@@ -78,7 +78,7 @@ public class BingCustomSearchSample {
             // 1. comment out the below lines
             final String subscriptionKey = System.getenv("BING_CUSTOM_SEARCH_SUBSCRIPTION_KEY");
             final String customConfigId = System.getenv("AZURE_BING_SAMPLES_CUSTOM_CONFIG_ID");
-            // 2. paste your cognitive services API key and custom config id below, and uncomment the following two lines
+            // 2. paste your custom config id below and add your key to your environment variables
             //final String subscriptionKey = System.getenv("BING_CUSTOM_SEARCH_SUBSCRIPTION_KEY");
             //final String customConfigId = "enter your custom config id here";
 
