@@ -27,7 +27,7 @@ To get these samples running locally, simply get the pre-requisites above, then:
 
 1. git clone https://github.com/Azure-Samples/cognitive-services-java-sdk-samples.git
 2. cd cognitive-services-java-sdk-samples/Search/BingAutoSuggest
-3. set env variable AZURE_BING_SAMPLES_API_KEY to your cognitive services API key.
+3. set env variable BING_AUTOSUGGEST_SUBSCRIPTION_KEY to your cognitive services API key.
 4. set env variable AZURE_BING_SAMPLES_CUSTOM_CONFIG_ID to your custom configuration id.
 5. mvn compile exec:java
 
