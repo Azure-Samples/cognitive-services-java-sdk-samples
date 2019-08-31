@@ -65,7 +65,7 @@ public class BingAutoSuggestSample {
         try {
             //=============================================================
             // Authenticate
-
+            // Add your Bing Autosuggest subscription key to your environment variables.
             final String subscriptionKey = System.getenv("BING_AUTOSUGGEST_SUBSCRIPTION_KEY");
             final String customConfigId = System.getenv("AZURE_BING_SAMPLES_CUSTOM_CONFIG_ID");
 
