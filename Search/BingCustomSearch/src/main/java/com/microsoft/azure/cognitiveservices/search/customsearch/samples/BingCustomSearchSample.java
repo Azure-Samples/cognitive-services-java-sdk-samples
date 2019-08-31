@@ -76,7 +76,7 @@ public class BingCustomSearchSample {
             // If not, you may get an API key not found exception.
             // IMPORTANT: if you have not set the `AZURE_BING_SAMPLES_API_KEY` and AZURE_BING_SAMPLES_CUSTOM_CONFIG_ID environment variables to your cognitive services API key:
             // 1. comment out the below lines
-            final String subscriptionKey = System.getenv("AZURE_BING_SAMPLES_API_KEY");
+            final String subscriptionKey = System.getenv("BING_CUSTOM_SEARCH_SUBSCRIPTION_KEY");
             final String customConfigId = System.getenv("AZURE_BING_SAMPLES_CUSTOM_CONFIG_ID");
             // 2. paste your cognitive services API key and custom config id below, and uncomment the following two lines
             //final String subscriptionKey = "enter your key here";
