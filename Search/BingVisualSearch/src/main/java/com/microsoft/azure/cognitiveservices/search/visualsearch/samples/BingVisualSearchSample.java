@@ -192,15 +192,11 @@ public class BingVisualSearchSample {
         try {
             //=============================================================
             // Authenticate
-
-            // If you are going to set the AZURE_BING_SAMPLES_API_KEY environment variable, make sure you set it for your OS, then reopen your command prompt or IDE.
-            // If not, you may get an API key not found exception.
-            // IMPORTANT: MAKE SURE TO USE S9 PRICING TIER OF THE BING SEARCH V7 API KEY FOR VISUAL SEARCH. Otherwise, you will get an invalid subscription key error.
-            // IMPORTANT: if you have not set the `AZURE_BING_SAMPLES_API_KEY` environment variable to your cognitive services API key:
-            // 1. comment out the below line
-            final String subscriptionKey = System.getenv("AZURE_BING_SAMPLES_API_KEY");
-            // 2. paste your cognitive services API key below, and uncomment the line
-            //final String subscriptionKey = "enter your key here";
+            // Set the BING_SEARCH_V7_SUBSCRIPTION_KEY environment variable with your subscription key, 
+            // then reopen your command prompt or IDE. If not, you may get an API key not found exception.
+            // IMPORTANT: MAKE SURE TO USE S9 PRICING TIER OF THE BING SEARCH V7 API KEY FOR VISUAL SEARCH. 
+            // Otherwise, you will get an invalid subscription key error.
+            final String subscriptionKey = System.getenv("BING_SEARCH_V7_SUBSCRIPTION_KEY");
 
             BingVisualSearchAPI client = BingVisualSearchManager.authenticate(subscriptionKey);
 
