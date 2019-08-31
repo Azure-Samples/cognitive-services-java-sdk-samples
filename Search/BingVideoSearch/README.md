@@ -29,7 +29,8 @@ To get these samples running locally, simply get the pre-requisites above, then:
 
 1. git clone https://github.com/Azure-Samples/cognitive-services-java-sdk-samples.git
 2. cd cognitive-services-java-sdk-samples/Search/BingVideoSearch
-3. Either set a system environment variable named `AZURE_BING_SAMPLES_API_KEY` to your cognitive Services API key, or copy your key into the program. If you are going to set the AZURE_BING_SAMPLES_API_KEY environment variable, make sure to set it based on your OS, then reopen your command prompt or IDE. If not, you might get an API key not found exception.
+3. Set a system environment variable named `BING_SEARCH_V7_SUBSCRIPTION_KEY` with your subscription key, 
+   then reopen your command prompt or IDE. If not, you might get an API key not found exception.
 4. mvn compile exec:java
 
 ## More information ##
