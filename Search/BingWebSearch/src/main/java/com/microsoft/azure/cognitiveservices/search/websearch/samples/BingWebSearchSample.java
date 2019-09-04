@@ -123,7 +123,6 @@ public class BingWebSearchSample {
             // Authenticate
             // Set the BING_SEARCH_V7_SUBSCRIPTION_KEY environment variable with your subscription key,
             // then reopen your command prompt or IDE. If not, you may get an API key not found exception.
-            // IMPORTANT: if you have not set the `AZURE_BING_SAMPLES_API_KEY` environment variable to your cognitive services API key:
             final String subscriptionKey = System.getenv("BING_SEARCH_V7_SUBSCRIPTION_KEY");
 
             BingWebSearchAPI client = BingWebSearchManager.authenticate(subscriptionKey);
