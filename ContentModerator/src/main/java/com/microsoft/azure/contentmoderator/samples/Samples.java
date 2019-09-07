@@ -57,7 +57,7 @@ public class Samples {
                                     }
                                 });
                     }
-                }).withBaseUrl("https://westus.api.cognitive.microsoft.com");
+                }).withBaseUrl(System.getenv("CONTENT_MODERATOR_ENDPOINT")); // Add your endpoint to your environment variables.
     }
 
     static String readFileContents(String filePath) throws IOException {
@@ -82,16 +82,18 @@ public class Samples {
     public static void main(String[] args) {
         try {
             if(apiKey == null) {
-                apiKey = System.getenv("AZURE_CONTENT_MODERATOR_API_KEY");
+                // Add your Azure Content Moderator subscription key to your environment variables.
+                apiKey = System.getenv(System.getenv("CONTENT_MODERATOR_SUBSCRIPTION_KEY"));
                 if(apiKey == null) {
-                    throw new Exception("Azure content moderator samples api key not found.");
+                    throw new Exception("Azure Content Moderator key not found.");
                 }
             }
 
             if(TeamName == null) {
-                TeamName = System.getenv("AZURE_CONTENT_MODERATOR_TEAM_NAME");
+                // Add your Azure Content Moderator team name to your environment variables.
+                TeamName = System.getenv("CONTENT_MODERATOR_TEAM_NAME");
                 if(TeamName == null) {
-                    throw new Exception("Azure content moderator samples team name not found.");
+                    throw new Exception("Azure Content Moderator team name not found.");
                 }
             }
 
