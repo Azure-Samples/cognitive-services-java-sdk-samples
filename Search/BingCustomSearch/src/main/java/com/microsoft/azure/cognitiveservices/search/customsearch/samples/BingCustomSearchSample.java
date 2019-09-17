@@ -3,13 +3,14 @@
  * Licensed under the MIT License. See License.txt in the project root for
  * license information.
  */
-
+// <imports>
 package com.microsoft.azure.cognitiveservices.search.customsearch.samples;
 
 import com.microsoft.azure.cognitiveservices.search.customsearch.BingCustomSearchAPI;
 import com.microsoft.azure.cognitiveservices.search.customsearch.BingCustomSearchManager;
 import com.microsoft.azure.cognitiveservices.search.customsearch.models.SearchResponse;
 import com.microsoft.azure.cognitiveservices.search.customsearch.models.WebPage;
+// </imports>
 
 /**
  * Sample code for custom searching news using Bing Custom Search, an Azure Cognitive Service.
@@ -22,6 +23,7 @@ public class BingCustomSearchSample {
      * @param client instance of the Bing Custom Search API client
      * @return true if sample runs successfully
      */
+    // <runSample>
     public static boolean runSample(BingCustomSearchAPI client, String customConfigId) {
         try {
 
@@ -58,23 +60,23 @@ public class BingCustomSearchSample {
         }
         return false;
     }
+    // </runSample>
 
 
     /**
      * Main entry point.
      *
      * @param args the parameters
+     * 
      */
+    // <main>
     public static void main(String[] args) {
         try {
-            //=============================================================
-            // Authenticate
-
-            // If you do not have a customConfigId, you can also use 1 as your value when setting your environment variable.
 
             // Set the BING_CUSTOM_SEARCH_SUBSCRIPTION_KEY and AZURE_BING_SAMPLES_CUSTOM_CONFIG_ID environment variables, 
             // then reopen your command prompt or IDE. If not, you may get an API key not found exception.
             final String subscriptionKey = System.getenv("BING_CUSTOM_SEARCH_SUBSCRIPTION_KEY");
+            // If you do not have a customConfigId, you can also use 1 as your value when setting your environment variable.
             final String customConfigId = System.getenv("AZURE_BING_SAMPLES_CUSTOM_CONFIG_ID");
 
             BingCustomSearchAPI client = BingCustomSearchManager.authenticate(subscriptionKey);
@@ -85,4 +87,5 @@ public class BingCustomSearchSample {
             e.printStackTrace();
         }
     }
+    // </main>
 }
