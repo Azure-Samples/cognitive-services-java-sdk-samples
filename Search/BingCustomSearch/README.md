@@ -29,7 +29,9 @@ To get these samples running locally, simply get the pre-requisites above, then:
 2. cd cognitive-services-java-sdk-samples/Search/BingCustomSearch
 3. set a system environment variable named `BING_CUSTOM_SEARCH_SUBSCRIPTION_KEY` with your subscription key as a value, then reopen your command prompt or IDE. If not, you might get an API key not found exception.
 4. Set env variable AZURE_BING_SAMPLES_CUSTOM_CONFIG_ID to your custom configuration id. Can set to 1 if you do not have a custom config id.
-5. mvn compile exec:java
+5. Use gradle to build and run the sample:
+    1. `gradle build`
+    2. `gradle run`
 
 ## More information ##
 [Bing Custom Search Documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/bing-custom-search/)
