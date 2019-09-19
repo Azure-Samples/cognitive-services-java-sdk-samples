@@ -13,10 +13,10 @@ public class BingCustomSearchSample {
     public static boolean runSample(BingCustomSearchAPI client, String customConfigId) {
         try {
     
-            //=============================================================
-            // This will custom search for "Xbox" and print out name and url for the first web page in the results list
+            // This will search for "Xbox" using Bing Custom Search 
+            //and print out name and url for the first web page in the results list
     
-            System.out.println("Searched for Query# \"Xbox\"");
+            System.out.println("Searching for Query: \"Xbox\"");
             SearchResponse webData = client.bingCustomInstances().search()
                 .withCustomConfig(customConfigId != null ? Long.valueOf(customConfigId) : 0)
                 .withQuery("Xbox")
