@@ -54,6 +54,7 @@ public class CustomVisionSamples {
 
     public static void ImageClassification_Sample(TrainingApi trainClient, PredictionEndpoint predictor) {
         try {
+            // <snippet_create>
             System.out.println("ImageClassification Sample");
             Trainings trainer = trainClient.trainings();
 
@@ -61,7 +62,9 @@ public class CustomVisionSamples {
             Project project = trainer.createProject()
                 .withName("Sample Java Project")
                 .execute();
+            // </snippet_create>
 
+            // <snippet_tags>
             // create hemlock tag
             Tag hemlockTag = trainer.createTag()
                 .withProjectId(project.id())
@@ -72,7 +75,9 @@ public class CustomVisionSamples {
                 .withProjectId(project.id())
                 .withName("Japanese Cherry")
                 .execute();
+            // </snippet_tags>
 
+            // <snippet_upload>
             System.out.println("Adding images...");
             for (int i = 1; i <= 10; i++) {
                 String fileName = "hemlock_" + i + ".jpg";
@@ -85,7 +90,9 @@ public class CustomVisionSamples {
                 byte[] contents = GetImage("/Japanese Cherry", fileName);
                 AddImageToProject(trainer, project, fileName, contents, cherryTag.id(), null);
             }
+            // </snippet_upload>
 
+            // <snippet_train>
             System.out.println("Training...");
             Iteration iteration = trainer.trainProject(project.id());
 
@@ -97,6 +104,7 @@ public class CustomVisionSamples {
             }
             System.out.println("Training Status: "+ iteration.status());
             trainer.updateIteration(project.id(), iteration.id(), iteration.withIsDefault(true));
+            // </snippet_train>
 
             // use below for url
             // String url = "some url";
@@ -105,6 +113,7 @@ public class CustomVisionSamples {
             //                         .withUrl(url)
             //                         .execute();
 
+            // <snippet_predict>
             // load test image
             byte[] testImage = GetImage("/Test", "test_image.jpg");
 
@@ -118,6 +127,7 @@ public class CustomVisionSamples {
             {
                 System.out.println(String.format("\t%s: %.2f%%", prediction.tagName(), prediction.probability() * 100.0f));
             }
+            // </snippet_predict>
         } catch (Exception e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
@@ -127,6 +137,7 @@ public class CustomVisionSamples {
     public static void ObjectDetection_Sample(TrainingApi trainClient, PredictionEndpoint predictor)
     {
         try {
+            // <snippet_od_mapping>
             // Mapping of filenames to their respective regions in the image. The coordinates are specified
             // as left, top, width, height in normalized coordinates. I.e. (left is left in pixels / width in pixels)
 
@@ -177,6 +188,7 @@ public class CustomVisionSamples {
             regionMap.put("fork_18.jpg", new double[] { 0.234068632, 0.445702642, 0.6127451, 0.344771236 });
             regionMap.put("fork_19.jpg", new double[] { 0.219362751, 0.141781077, 0.5919118, 0.6683006 });
             regionMap.put("fork_20.jpg", new double[] { 0.180147052, 0.239820287, 0.6887255, 0.235294119 });
+            // </snippet_od_mapping>
 
             System.out.println("Object Detection Sample");
             Trainings trainer = trainClient.trainings();
@@ -196,6 +208,7 @@ public class CustomVisionSamples {
                 return;
             }
 
+            // <snippet_create_od>
             System.out.println("Creating project...");
             // create an object detection project
             Project project = trainer.createProject()
@@ -204,7 +217,9 @@ public class CustomVisionSamples {
                 .withDomainId(objectDetectionDomain.id())
                 .withClassificationType(Classifier.MULTILABEL.toString())
                 .execute();
+            // </snippet_create_od>
 
+            // <snippet_tags_od>
             // create fork tag
             Tag forkTag = trainer.createTag()
                 .withProjectId(project.id())
@@ -216,7 +231,9 @@ public class CustomVisionSamples {
                 .withProjectId(project.id())
                 .withName("scissor")
                 .execute();
+            // </snippet_tags_od>
 
+            // <snippet_upload_od>
             System.out.println("Adding images...");
             for (int i = 1; i <= 20; i++) {
                 String fileName = "fork_" + i + ".jpg";
@@ -229,7 +246,9 @@ public class CustomVisionSamples {
                 byte[] contents = GetImage("/scissors", fileName);
                 AddImageToProject(trainer, project, fileName, contents, scissorsTag.id(), regionMap.get(fileName));
             }
+            // </snippet_upload_od>
 
+            // <snippet_train_od>
             System.out.println("Training...");
             Iteration iteration = trainer.trainProject(project.id());
             while (iteration.status().equals("Training"))
@@ -240,6 +259,7 @@ public class CustomVisionSamples {
             }
             System.out.println("Training Status: "+ iteration.status());
             trainer.updateIteration(project.id(), iteration.id(), iteration.withIsDefault(true));
+            // </snippet_train_od>
 
             // use below for url
             // String url = "some url";
@@ -248,6 +268,7 @@ public class CustomVisionSamples {
             //                         .withUrl(url)
             //                         .execute();
 
+            // <snippet_prediction_od>
             // load test image
             byte[] testImage = GetImage("/ObjectTest", "test_image.jpg");
 
@@ -268,12 +289,14 @@ public class CustomVisionSamples {
                     prediction.boundingBox().height()
                 ));
             }
+            // </snippet_prediction_od>
         } catch (Exception e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
     }
 
+    // <snippet_helpers>
     private static void AddImageToProject(Trainings trainer, Project project, String fileName, byte[] contents, UUID tag, double[] regionValues)
     {
         System.out.println("Adding image: " + fileName);
@@ -312,6 +335,7 @@ public class CustomVisionSamples {
         }
         return null;
     }
+    // </snippet_helpers>
 
     /**
      * Main entry point.
