@@ -4,37 +4,30 @@ platforms: java
 author: milismsft
 ---
 
-# Bing Spell Check SDK Sample ##
+# Bing Spell Check Sample
 
-Sample code for spell checking using Bing Spell Check, an Azure Cognitive Service.
-- Spell check "Bill Gatas" with market and mode settings and print out the flagged tokens and suggestions.
-
-
-## Features
-
-This project framework provides examples for the **Bing Spell Check SDK** for the [Spell Check API](https://azure.microsoft.com/en-us/services/cognitive-services/)
+This sample checks the spelling for the query "Bill Gatas" (with market and mode settings) and print outs the flagged tokens and spelling correction suggestions.
 
 ## Getting Started
 
 ### Prerequisites
+- If you don't have a Microsoft Azure subscription you can get a FREE trial account [here](http://go.microsoft.com/fwlink/?LinkId=330212).
+- Get a Cognitive Services API key with which to authenticate the SDK's calls. [Sign up here](https://azure.microsoft.com/en-us/services/cognitive-services/spell-check/). You can get a trial key for **free** which will expire after 30 days.
+- Set an environment variable named BING_SPELL_CHECK_SUBSCRIPTION_KEY with your Cognitive Services API key in the quickstart.
 
-- A cognitive services API key with which to authenticate the SDK's calls. [Sign up here](https://azure.microsoft.com/en-us/services/cognitive-services/directory/) by navigating to the **Search** services and acquiring an API key. You can get a trial key for **free** which will expire after 30 days.
-- Maven
+### Clone and run
 
-### Quickstart
+Execute the following from a command line:
 
-To get these samples running locally, fulfill the pre-requisites above, then in your root folder:
+1. `git clone https://github.com/Azure-Samples/cognitive-services-java-sdk-samples.git`
+1. `cd cognitive-services-java-sdk-samples/Language/BingSpellCheck`
+1. `mvn compile exec:java cleanupDaemonThreads = false`
 
-1. From the command line: `git clone https://github.com/Azure-Samples/cognitive-services-java-sdk-samples.git`
-2. From the command line: `cd cognitive-services-java-sdk-samples/Language/BingSpellCheck`
-3. Set an environment variable named BING_SPELL_CHECK_SUBSCRIPTION_KEY with your cognitive services API key.
-4. From the command line: `mvn compile exec:java cleanupDaemonThreads = false`
+## More information 
 
-## More information ##
-
-[http://azure.com/java](http://azure.com/java)
-
-If you don't have a Microsoft Azure subscription you can get a FREE trial account [here](http://go.microsoft.com/fwlink/?LinkId=330212)
+- [Build and deploy Java apps on Azure](http://azure.com/java)
+- [The Java SDK reference](https://docs.microsoft.com/en-us/java/api/overview/azure/cognitiveservices/client?view=azure-java-stable)
+- [Bing Spell Check documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/bing-spell-check/index)
 
 ---
 
