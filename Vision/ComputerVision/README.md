@@ -4,37 +4,29 @@ platforms: java
 author: milismsft
 ---
 
-# Computer Vision SDK Sample ##
+# Computer Vision SDK Sample
 
-Sample code for image classification and object detection for Computer Vision, an Azure Cognitive Service.
-- Send a resource image and retrieve a description of it
-
-## Features
-
-This project framework provides examples for the **Computer Vision SDK** for the [Computer Vision API](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/)
+This sample code uses image classification and object detection on an image with the Computer Vision Cognitive Service. It will retrieve and print information from the image. Maven is used.
 
 ## Getting Started
 
 ### Prerequisites
+- If you don't have a Microsoft Azure subscription you can get a FREE trial account [here](http://go.microsoft.com/fwlink/?LinkId=330212).
+- Get an [Azure Computer Vision](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/) account to get your subscription key and endpoint.
+- Add COMPUTER_VISION_SUBSCRIPTION_KEY and COMPUTER_VISION_ENDPOINT to your environment variables with your key and endpoint as values.
 
-- An Azure Computer Vision account to get your subscription key and endpoint
-- Maven
+### Clone and run
 
-### Quickstart
+Execute from the command line:
 
-To run these samples locally:
+1. `git clone https://github.com/Azure-Samples/cognitive-services-java-sdk-samples.git`
+1. `cd cognitive-services-java-sdk-samples/Vision/ComputerVision`
+1. `mvn compile exec:java -Dexec.cleanupDaemonThreads=false`
 
-1. git clone https://github.com/Azure-Samples/cognitive-services-java-sdk-samples.git
-2. cd cognitive-services-java-sdk-samples/Vision/ComputerVision
-3. set environment variable COMPUTER_VISION_SUBSCRIPTION_KEY with your subscription key
-4. set environment variable COMPUTER_VISION_ENDPOINT with your endpoint
-4. mvn compile exec:java
+## More information 
 
-## More information ##
-
-[http://azure.com/java](http://azure.com/java)
-
-If you don't have a Microsoft Azure subscription you can get a FREE trial account [here](http://go.microsoft.com/fwlink/?LinkId=330212)
+- [Build and deploy Java apps on Azure](http://azure.com/java)
+- The [Computer Vision documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/index)
 
 ---
 
