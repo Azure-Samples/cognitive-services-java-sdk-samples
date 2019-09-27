@@ -7,9 +7,11 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.os.AsyncTask;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
+
 import com.azure.ai.inkrecognizer.*;
 import com.azure.ai.inkrecognizer.model.InkDrawing;
 import com.azure.ai.inkrecognizer.model.InkRecognitionRoot;
@@ -26,6 +28,7 @@ public class NoteTaker extends View {
     private final InkRecognizerAsyncClient inkRecognizerAsyncClient;
     private CountDownTimer analysisTimer = null;
     private final ArrayList<InkStroke> strokes = new ArrayList<>();
+    private static final String TAG = "InkRecognizer";
 
     public NoteTaker(Context context) throws Exception {
         super(context);
@@ -73,15 +76,16 @@ public class NoteTaker extends View {
 
         @Override
         protected NoteTaker doInBackground(NoteTaker... params) {
-            NoteTaker noteTaker = params[0];
+            NoteTaker noteTaker = null;
             try {
+                noteTaker = params[0];
                 if (noteTaker.strokes.size() != 0) {
                     Mono<Response<InkRecognitionRoot>> response = noteTaker.inkRecognizerAsyncClient.recognizeInk(noteTaker.strokes);
                     response.subscribe(r -> showResults(r), e -> e.printStackTrace());
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                System.out.println("Error parsing response");
+                Log.d(TAG, "Error while fetching the response", e);
             }
             return noteTaker;
         }

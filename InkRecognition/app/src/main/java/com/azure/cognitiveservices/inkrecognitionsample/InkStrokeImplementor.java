@@ -1,6 +1,8 @@
 package com.azure.cognitiveservices.inkrecognitionsample;
 
-import com.azure.ai.inkrecognizer.*;
+import com.azure.ai.inkrecognizer.InkPoint;
+import com.azure.ai.inkrecognizer.InkStroke;
+import com.azure.ai.inkrecognizer.InkStrokeKind;
 
 import java.util.ArrayList;
 import java.util.List;
