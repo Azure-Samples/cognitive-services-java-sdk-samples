@@ -85,7 +85,7 @@ public class NoteTaker extends View {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                Log.d(TAG, "Error while fetching the response", e);
+                Log.e(TAG, "Error in fetching data from SDK", e);
             }
             return noteTaker;
         }

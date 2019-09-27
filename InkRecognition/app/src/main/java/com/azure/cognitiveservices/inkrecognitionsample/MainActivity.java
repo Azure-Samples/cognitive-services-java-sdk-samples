@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
             NoteTaker noteTaker = new NoteTaker(this);
             setContentView(noteTaker);
         } catch (Exception e) {
-            Log.d(TAG, "Error in ink analysis", e);
+            Log.e(TAG, "Exception", e);
         }
     }
 }
