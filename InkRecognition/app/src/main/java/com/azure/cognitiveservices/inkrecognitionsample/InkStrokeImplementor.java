@@ -1,4 +1,4 @@
-package CognitiveServices.Ink.Recognition;
+package com.azure.cognitiveservices.inkrecognitionsample;
 
 import com.azure.ai.inkrecognizer.*;
 

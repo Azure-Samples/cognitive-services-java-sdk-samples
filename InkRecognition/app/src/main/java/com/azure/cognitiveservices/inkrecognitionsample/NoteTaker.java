@@ -1,4 +1,4 @@
-package CognitiveServices.Ink.Recognition;
+package com.azure.cognitiveservices.inkrecognitionsample;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -7,7 +7,6 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.os.AsyncTask;
 import android.os.CountDownTimer;
-import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -35,17 +34,13 @@ public class NoteTaker extends View {
         inkRecognizerAsyncClient = new InkRecognizerClientBuilder()
                 .credentials(new InkRecognizerCredentials(appKey))
                 .endpoint(destinationUrl)
-                .retryCount(3)
-                .retryTimeout(300)
-                .applicationKind(ApplicationKind.WRITING)
+                // You can also set this to ApplicationKind.WRITING or ApplicationKind.DRAWING
+                // if you know the expected type of ink content
+                .applicationKind(ApplicationKind.MIXED)
+                // You can set the language here if you know the expected language
                 .language("en-US")
-                .unit(InkPointUnit.PIXEL)
-                .unitMultiple(1)
-                .serviceVersion(ServiceVersion.PREVIEW_1_0_0)
                 .displayMetrics(getResources().getDisplayMetrics())
                 .buildAsyncClient();
-        DisplayMetrics metrics = getResources().getDisplayMetrics();
-        System.out.println("DisplayMetrics: " + metrics.xdpi + ", " + metrics.ydpi);
         brush.setAntiAlias(true);
         brush.setColor(Color.BLACK);
         brush.setStyle(Paint.Style.STROKE);
@@ -81,7 +76,6 @@ public class NoteTaker extends View {
             NoteTaker noteTaker = params[0];
             try {
                 if (noteTaker.strokes.size() != 0) {
-                    System.out.println();
                     Mono<Response<InkRecognitionRoot>> response = noteTaker.inkRecognizerAsyncClient.recognizeInk(noteTaker.strokes);
                     response.subscribe(r -> showResults(r), e -> e.printStackTrace());
                 }
@@ -99,6 +93,7 @@ public class NoteTaker extends View {
         }
 
         private void showResults(Response<InkRecognitionRoot> response) {
+
             if (response.status == 200) {
 
                 InkRecognitionRoot root = response.root;
@@ -117,6 +112,7 @@ public class NoteTaker extends View {
                 }
 
             }
+
         }
 
     }

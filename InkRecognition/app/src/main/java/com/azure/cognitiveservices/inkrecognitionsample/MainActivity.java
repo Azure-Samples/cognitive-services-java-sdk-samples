@@ -1,4 +1,4 @@
-package CognitiveServices.Ink.Recognition;
+package com.azure.cognitiveservices.inkrecognitionsample;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
