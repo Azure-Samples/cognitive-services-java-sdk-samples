@@ -81,7 +81,7 @@ class ComputerVisionQuickstart {
     DetectDomainSpecificContentInImage(computerVisionClient, localImagePath, remoteImageURL);
     DetectImageTypesInImage(computerVisionClient, localImagePath, remoteImageURL);
 
-    // Analyze local and remote text-image for recognizing text with OCR
+    // Analyze local and remote text-image for recognizing printed text with OCR
     RecognizeTextOCR(computerVisionClient, localTextImagePath, remoteTextImageURL);
   }
 
@@ -528,24 +528,24 @@ class ComputerVisionQuickstart {
   //  END - Detect Image Type
 
   /** 
-   * RECOGNIZE TEXT:
-   * Displays text found in image with angle and orientation of the block of text.
+   * RECOGNIZE PRINTED TEXT:
+   * Displays text found in image of printed text with angle and orientation of the block of text.
    */
   private static void RecognizeTextOCR(ComputerVisionClient client, String localTextImagePath, String remoteTextImageURL){
     System.out.println("-----------------------------------------------");
-    System.out.println("RECOGNIZE TEXT");
+    System.out.println("RECOGNIZE PRINTED TEXT");
     try {
       File rawImage = new File(localTextImagePath);
       byte[] localImageBytes = Files.readAllBytes(rawImage.toPath());
 
-      // Recognize text in local image
+      // Recognize printed text in local image
       OcrResult ocrResultLocal = client.computerVision().recognizePrintedTextInStream()
           .withDetectOrientation(true)
           .withImage(localImageBytes)
           .withLanguage(OcrLanguages.EN)
           .execute();
 
-      // Recognize text in remote image
+      // Recognize printed text in remote image
       OcrResult ocrResultRemote = client.computerVision().recognizePrintedText()
           .withDetectOrientation(true)
           .withUrl(remoteTextImageURL)
@@ -588,7 +588,7 @@ class ComputerVisionQuickstart {
         System.out.println(e.getMessage());
         e.printStackTrace();
     }
-    //  END - Recognize Text
+    //  END - Recognize Printed Text
     System.out.println();
     System.out.println("-----------------------------------------------");
     System.out.println("End of quickstart.");
