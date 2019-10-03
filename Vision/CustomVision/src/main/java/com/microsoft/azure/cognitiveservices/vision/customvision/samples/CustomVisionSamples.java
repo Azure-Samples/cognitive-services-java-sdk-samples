@@ -109,6 +109,7 @@ public class CustomVisionSamples {
             String publishedModelName = "myModel";
             String predictionResourceId = System.getenv("AZURE_CUSTOMVISION_PREDICTION_ID");
             trainer.publishIteration(project.id(), iteration.id(), publishedModelName, predictionResourceId);
+            // </snippet_train>
 
             // use below for url
             // String url = "some url";
@@ -270,6 +271,7 @@ public class CustomVisionSamples {
             String publishedModelName = "myModel";
             String predictionResourceId = System.getenv("AZURE_CUSTOMVISION_PREDICTION_ID");
             trainer.publishIteration(project.id(), iteration.id(), publishedModelName, predictionResourceId);
+            // </snippet_train_od>
 
             // use below for url
             // String url = "some url";
