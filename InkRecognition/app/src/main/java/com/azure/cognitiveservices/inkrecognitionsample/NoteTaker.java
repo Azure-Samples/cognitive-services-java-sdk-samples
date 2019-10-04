@@ -32,6 +32,7 @@ public class NoteTaker extends View {
     private static final String TAG = "InkRecognizer";
     private DisplayMetrics displayMetrics;
 
+    // <setPropertiesForNoteTaker>
     public NoteTaker(Context context) throws Exception {
         super(context);
         String appKey = "<SUBSCRIPTION_KEY>";
@@ -52,7 +53,9 @@ public class NoteTaker extends View {
         brush.setStrokeJoin(Paint.Join.ROUND);
         brush.setStrokeWidth(3.0f);
     }
+    // </setPropertiesForNoteTaker>
 
+    // <timerToShowResults>
     private void startTimer() {
         //The next 2 variables are used for the inactivity timer which triggers recognition
         //after a certain period of inactivity.
@@ -71,11 +74,14 @@ public class NoteTaker extends View {
             }
         }.start();
     }
+    // </timerToShowResults>
 
+    // <handleResponse>
     private static class recognizeInkTask extends AsyncTask<NoteTaker, Integer, NoteTaker> {
 
         StringBuilder recognizedWords = new StringBuilder();
 
+        // <backgroundProcess>
         @Override
         protected NoteTaker doInBackground(NoteTaker... params) {
             NoteTaker noteTaker = null;
@@ -83,7 +89,7 @@ public class NoteTaker extends View {
                 noteTaker = params[0];
                 if (noteTaker.strokes.size() != 0) {
                     Mono<Response<InkRecognitionRoot>> response = noteTaker.inkRecognizerAsyncClient.recognizeInk(noteTaker.strokes);
-                    response.subscribe(r -> showResults(r), e -> e.printStackTrace());
+                    response.subscribe(r -> processResults(r), e -> e.printStackTrace());
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -91,14 +97,18 @@ public class NoteTaker extends View {
             }
             return noteTaker;
         }
+        // </backgroundProcess>
 
+        // <showResults>
         @Override
         protected void onPostExecute(NoteTaker noteTaker) {
             Toast toast = Toast.makeText(noteTaker.getContext(), recognizedWords.toString(), Toast.LENGTH_LONG);
             toast.show();
         }
+        // </showResults>
 
-        private void showResults(Response<InkRecognitionRoot> response) {
+        // <processResults>
+        private void processResults(Response<InkRecognitionRoot> response) {
 
             if (response.status == 200) {
 
@@ -120,15 +130,20 @@ public class NoteTaker extends View {
             }
 
         }
+        // </processResults>
 
     }
+    // </handleResponse>
 
+    // <cancelTimeCountdown>
     private void cancelTimer() {
         if (analysisTimer != null) {
             analysisTimer.cancel();
         }
     }
+    // </cancelTimeCountdown>
 
+    // <processTouchEvents>
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         float x = event.getX();
@@ -155,9 +170,12 @@ public class NoteTaker extends View {
         postInvalidate();
         return false;
     }
+    // </processTouchEvents>
 
+    // <onDrawVisuals>
     @Override
     protected void onDraw(Canvas canvas) {
         canvas.drawPath(path, brush);
     }
+    // </onDrawVisuals>
 }
