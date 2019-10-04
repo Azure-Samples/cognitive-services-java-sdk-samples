@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.os.AsyncTask;
 import android.os.CountDownTimer;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -29,11 +30,13 @@ public class NoteTaker extends View {
     private CountDownTimer analysisTimer = null;
     private final ArrayList<InkStroke> strokes = new ArrayList<>();
     private static final String TAG = "InkRecognizer";
+    private DisplayMetrics displayMetrics;
 
     public NoteTaker(Context context) throws Exception {
         super(context);
         String appKey = "<SUBSCRIPTION_KEY>";
         String destinationUrl = "https://api.cognitive.microsoft.com/inkrecognizer";
+        displayMetrics = getResources().getDisplayMetrics();
         inkRecognizerAsyncClient = new InkRecognizerClientBuilder()
                 .credentials(new InkRecognizerCredentials(appKey))
                 .endpoint(destinationUrl)
@@ -42,7 +45,6 @@ public class NoteTaker extends View {
                 .applicationKind(ApplicationKind.MIXED)
                 // You can set the language here if you know the expected language
                 .language("en-US")
-                .displayMetrics(getResources().getDisplayMetrics())
                 .buildAsyncClient();
         brush.setAntiAlias(true);
         brush.setColor(Color.BLACK);
@@ -136,12 +138,12 @@ public class NoteTaker extends View {
             case MotionEvent.ACTION_DOWN:
                 path.moveTo(x, y);
                 stroke = new InkStrokeImplementor();
-                stroke.addPoint(x, y);
+                stroke.addPoint(x, y, displayMetrics);
                 cancelTimer();
                 return true;
             case MotionEvent.ACTION_MOVE:
                 path.lineTo(x, y);
-                stroke.addPoint(x, y);
+                stroke.addPoint(x, y, displayMetrics);
                 break;
             case MotionEvent.ACTION_UP:
                 strokes.add(stroke);
