@@ -21,12 +21,13 @@ import com.microsoft.azure.cognitiveservices.vision.customvision.training.models
 import com.microsoft.azure.cognitiveservices.vision.customvision.training.models.Iteration;
 import com.microsoft.azure.cognitiveservices.vision.customvision.training.models.Project;
 import com.microsoft.azure.cognitiveservices.vision.customvision.training.models.Region;
-import com.microsoft.azure.cognitiveservices.vision.customvision.training.TrainingApi;
+import com.microsoft.azure.cognitiveservices.vision.customvision.training.models.TrainProjectOptionalParameter;
+import com.microsoft.azure.cognitiveservices.vision.customvision.training.CustomVisionTrainingClient;
 import com.microsoft.azure.cognitiveservices.vision.customvision.training.Trainings;
 import com.microsoft.azure.cognitiveservices.vision.customvision.training.CustomVisionTrainingManager;
 import com.microsoft.azure.cognitiveservices.vision.customvision.prediction.models.ImagePrediction;
 import com.microsoft.azure.cognitiveservices.vision.customvision.prediction.models.Prediction;
-import com.microsoft.azure.cognitiveservices.vision.customvision.prediction.PredictionEndpoint;
+import com.microsoft.azure.cognitiveservices.vision.customvision.prediction.CustomVisionPredictionClient;
 import com.microsoft.azure.cognitiveservices.vision.customvision.prediction.CustomVisionPredictionManager;
 import com.microsoft.azure.cognitiveservices.vision.customvision.training.models.Tag;
 
@@ -37,7 +38,7 @@ public class CustomVisionSamples {
      * @param trainer the Custom Vision Training client object
      * @param predictor the Custom Vision Prediction client object
      */
-    public static void runSample(TrainingApi trainer, PredictionEndpoint predictor) {
+    public static void runSample(CustomVisionTrainingClient trainer, CustomVisionPredictionClient predictor) {
         try {
             // This demonstrates how to create an image classification project, upload images,
             // train it and make a prediction.
@@ -52,7 +53,7 @@ public class CustomVisionSamples {
         }
     }
 
-    public static void ImageClassification_Sample(TrainingApi trainClient, PredictionEndpoint predictor) {
+    public static void ImageClassification_Sample(CustomVisionTrainingClient trainClient, CustomVisionPredictionClient predictor) {
         try {
             // <snippet_create>
             System.out.println("ImageClassification Sample");
@@ -94,7 +95,7 @@ public class CustomVisionSamples {
 
             // <snippet_train>
             System.out.println("Training...");
-            Iteration iteration = trainer.trainProject(project.id());
+            Iteration iteration = trainer.trainProject(project.id(), new TrainProjectOptionalParameter());
 
             while (iteration.status().equals("Training"))
             {
@@ -103,13 +104,18 @@ public class CustomVisionSamples {
                 iteration = trainer.getIteration(project.id(), iteration.id());
             }
             System.out.println("Training Status: "+ iteration.status());
-            trainer.updateIteration(project.id(), iteration.id(), iteration.withIsDefault(true));
+
+            // The iteration is now trained. Publish it to the prediction endpoint.
+            String publishedModelName = "myModel";
+            String predictionResourceId = System.getenv("AZURE_CUSTOMVISION_PREDICTION_ID");
+            trainer.publishIteration(project.id(), iteration.id(), publishedModelName, predictionResourceId);
             // </snippet_train>
 
             // use below for url
             // String url = "some url";
-            // ImagePrediction results = predictor.predictions().predictImage()
+            // ImagePrediction results = predictor.predictions().classifyImageUrl()
             //                         .withProjectId(project.id())
+            //                         .withPublishedName(publishedModelName)
             //                         .withUrl(url)
             //                         .execute();
 
@@ -118,8 +124,9 @@ public class CustomVisionSamples {
             byte[] testImage = GetImage("/Test", "test_image.jpg");
 
             // predict
-            ImagePrediction results = predictor.predictions().predictImage()
+            ImagePrediction results = predictor.predictions().classifyImage()
                 .withProjectId(project.id())
+                .withPublishedName(publishedModelName)
                 .withImageData(testImage)
                 .execute();
 
@@ -134,7 +141,7 @@ public class CustomVisionSamples {
         }
     }
 
-    public static void ObjectDetection_Sample(TrainingApi trainClient, PredictionEndpoint predictor)
+    public static void ObjectDetection_Sample(CustomVisionTrainingClient trainClient, CustomVisionPredictionClient predictor)
     {
         try {
             // <snippet_od_mapping>
@@ -250,7 +257,8 @@ public class CustomVisionSamples {
 
             // <snippet_train_od>
             System.out.println("Training...");
-            Iteration iteration = trainer.trainProject(project.id());
+            Iteration iteration = trainer.trainProject(project.id(), new TrainProjectOptionalParameter());
+
             while (iteration.status().equals("Training"))
             {
                 System.out.println("Training Status: "+ iteration.status());
@@ -258,13 +266,18 @@ public class CustomVisionSamples {
                 iteration = trainer.getIteration(project.id(), iteration.id());
             }
             System.out.println("Training Status: "+ iteration.status());
-            trainer.updateIteration(project.id(), iteration.id(), iteration.withIsDefault(true));
+
+            // The iteration is now trained. Publish it to the prediction endpoint.
+            String publishedModelName = "myModel";
+            String predictionResourceId = System.getenv("AZURE_CUSTOMVISION_PREDICTION_ID");
+            trainer.publishIteration(project.id(), iteration.id(), publishedModelName, predictionResourceId);
             // </snippet_train_od>
 
             // use below for url
             // String url = "some url";
-            // ImagePrediction results = predictor.predictions().predictImage()
+            // ImagePrediction results = predictor.predictions().detectImageUrl()
             //                         .withProjectId(project.id())
+            //                         .withPublishedName(publishedModelName)
             //                         .withUrl(url)
             //                         .execute();
 
@@ -273,8 +286,9 @@ public class CustomVisionSamples {
             byte[] testImage = GetImage("/ObjectTest", "test_image.jpg");
 
             // predict
-            ImagePrediction results = predictor.predictions().predictImage()
+            ImagePrediction results = predictor.predictions().detectImage()
                 .withProjectId(project.id())
+                .withPublishedName(publishedModelName)
                 .withImageData(testImage)
                 .execute();
 
@@ -347,11 +361,13 @@ public class CustomVisionSamples {
             //=============================================================
             // Authenticate
 
-            final String trainingApiKey = System.getenv("AZURE_CUSTOMVISION_TRAINING_API_KEY");;
-            final String predictionApiKey = System.getenv("AZURE_CUSTOMVISION_PREDICTION_API_KEY");;
+            final String CustomVisionTrainingClientKey = System.getenv("AZURE_CUSTOMVISION_TRAINING_API_KEY");
+            final String predictionApiKey = System.getenv("AZURE_CUSTOMVISION_PREDICTION_API_KEY");
 
-            TrainingApi trainClient = CustomVisionTrainingManager.authenticate(trainingApiKey);
-            PredictionEndpoint predictClient = CustomVisionPredictionManager.authenticate(predictionApiKey);
+            final String Endpoint = System.getenv("AZURE_CUSTOMVISION_ENDPOINT");
+
+            CustomVisionTrainingClient trainClient = CustomVisionTrainingManager.authenticate("https://{Endpoint}/customvision/v3.0/training/", CustomVisionTrainingClientKey).withEndpoint(Endpoint);
+            CustomVisionPredictionClient predictClient = CustomVisionPredictionManager.authenticate("https://{Endpoint}/customvision/v3.0/prediction/", predictionApiKey).withEndpoint(Endpoint);
 
             runSample(trainClient, predictClient);
         } catch (Exception e) {
