@@ -13,10 +13,15 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
-import com.azure.ai.inkrecognizer.*;
-import com.azure.ai.inkrecognizer.model.InkDrawing;
-import com.azure.ai.inkrecognizer.model.InkRecognitionRoot;
-import com.azure.ai.inkrecognizer.model.InkWord;
+import com.microsoft.azure.cognitiveservices.inkrecognizer.InkRecognizerAsyncClient;
+import com.microsoft.azure.cognitiveservices.inkrecognizer.InkRecognizerClientBuilder;
+import com.microsoft.azure.cognitiveservices.inkrecognizer.InkRecognizerCredentials;
+import com.microsoft.azure.cognitiveservices.inkrecognizer.ApplicationKind;
+import com.microsoft.azure.cognitiveservices.inkrecognizer.Response;
+import com.microsoft.azure.cognitiveservices.inkrecognizer.InkStroke;
+import com.microsoft.azure.cognitiveservices.inkrecognizer.model.InkDrawing;
+import com.microsoft.azure.cognitiveservices.inkrecognizer.model.InkRecognitionRoot;
+import com.microsoft.azure.cognitiveservices.inkrecognizer.model.InkWord;
 import reactor.core.publisher.Mono;
 
 import java.util.ArrayList;
@@ -110,9 +115,9 @@ public class NoteTaker extends View {
         // <processResults>
         private void processResults(Response<InkRecognitionRoot> response) {
 
-            if (response.status == 200) {
+            if (response.status() == 200) {
 
-                InkRecognitionRoot root = response.root;
+                InkRecognitionRoot root = response.root();
 
                 recognizedWords.append("\r\nRecognized Text:\r\n");
                 Iterable<InkWord> words = root.inkWords();
