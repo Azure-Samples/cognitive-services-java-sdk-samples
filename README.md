@@ -4,13 +4,17 @@ languages:
 - java
 products:
 - azure
-description: "These samples will show you how to get up and running using the Java SDKs for various Cognitive Services services."
+description: "These samples will get you started using the Java SDKs for various Cognitive Services."
 urlFragment: cognitive-services-java-sdk-samples
 ---
 
 # Cognitive Services Java SDK Samples
 
-These samples will show you how to get up and running using the Java SDKs for various Cognitive Services services. They'll cover a few rudimentary use cases and express best practices for interacting with the data from these APIs.
+These samples will get you started using the Java SDKs for various Cognitive Services. They'll cover a few common use cases that are end-to-end solutions, including best practices for interacting with the data from these APIs. 
+
+For quickstart versions of many of these samples (and for more examples not covered here), view the [cognitive-services-quickstart-code](https://github.com/Azure-Samples/cognitive-services-quickstart-code) repo for Java. This repo demonstrates short "snippets" of code that back up many of the quickstarts in the [Cognitive Services documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/) pages.
+
+For a general overview about Cognitive Services, view [What are Azure Cognitive Services?](https://docs.microsoft.com/en-us/azure/cognitive-services/welcome).
 
 ## Features
 
