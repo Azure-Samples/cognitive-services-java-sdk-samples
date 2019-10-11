@@ -1,9 +1,9 @@
 package com.azure.cognitiveservices.inkrecognitionsample;
 
 import android.util.DisplayMetrics;
-import com.azure.ai.inkrecognizer.InkPoint;
-import com.azure.ai.inkrecognizer.InkStroke;
-import com.azure.ai.inkrecognizer.InkStrokeKind;
+import com.microsoft.azure.cognitiveservices.inkrecognizer.InkPoint;
+import com.microsoft.azure.cognitiveservices.inkrecognizer.InkStroke;
+import com.microsoft.azure.cognitiveservices.inkrecognizer.InkStrokeKind;
 
 import java.util.ArrayList;
 import java.util.List;

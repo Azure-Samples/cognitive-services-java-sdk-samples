@@ -1,6 +1,6 @@
 package com.azure.cognitiveservices.inkrecognitionsample;
 
-import com.azure.ai.inkrecognizer.InkPoint;
+import com.microsoft.azure.cognitiveservices.inkrecognizer.InkPoint;
 
 // <inkPointImplementation>
 class InkPointImplementor implements InkPoint {

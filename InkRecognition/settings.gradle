@@ -1,1 +1,1 @@
-include ':app', ':InkRecognizerSDK'
+include ':app', ':azure-cognitiveservices-inkrecognizer'
