@@ -16,6 +16,8 @@ For quickstart versions of many of these samples (and for more examples not cove
 
 For a general overview about Cognitive Services, view [What are Azure Cognitive Services?](https://docs.microsoft.com/en-us/azure/cognitive-services/welcome).
 
+NOTE: QUICKSTARTS ARE BEING MOVED HERE: https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/java
+
 ## Features
 
 This project framework provides examples for the following services:
