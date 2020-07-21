@@ -16,11 +16,11 @@ The [Bing Image Search API](https://azure.microsoft.com/services/cognitive-servi
 
 ### Prerequisites
 
-- A cognitive services API key with which to authenticate the SDK's calls. [Sign up here](https://azure.microsoft.com/en-us/services/cognitive-services/directory/) by navigating to the **Search** services and acquiring a Bing Image Search API key. You can get a trial key for **free** which will expire after 30 days.
+- A cognitive services API key with which to authenticate the SDK's calls. [Create a new Azure account, and try Cognitive Services for free.](https://azure.microsoft.com/free/cognitive-services/)
 - The latest version of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (JDK)
 - Maven
 
-You must have a [Cognitive Services API account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) with access to the Bing Search APIs. If you don't have an Azure subscription, you can [create an account](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api) for free. Before continuing, You will need the access key provided after activating your free trial, or a paid subscription key from your Azure dashboard.
+You must have a [Cognitive Services API account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) with access to the Bing Search APIs. If you don't have an Azure subscription, you can visit [the Microsoft Cognitive Services Web site](https://azure.microsoft.com/free/cognitive-services/), create a new Azure account, and try Cognitive Services for free. Before continuing, You will need the access key provided after activating your free trial, or a paid subscription key from your Azure dashboard.
 
 ### Quickstart
 
@@ -38,7 +38,7 @@ After getting the prerequisites above:
 * [Java on Azure](http://azure.com/java)
 * [The Bing Image Search API](https://azure.microsoft.com/en-us/services/cognitive-services/)
 
-If you don't have a Microsoft Azure subscription you can get a FREE trial account [here](http://go.microsoft.com/fwlink/?LinkId=330212)
+If you don't have a Microsoft Azure subscription you can visit [the Microsoft Cognitive Services Web site](https://azure.microsoft.com/free/cognitive-services/), create a new Azure account, and try Cognitive Services for free.
 
 ---
 
