@@ -11,8 +11,8 @@ This sample checks the spelling for the query "Bill Gatas" (with market and mode
 ## Getting Started
 
 ### Prerequisites
-- If you don't have a Microsoft Azure subscription you can get a FREE trial account [here](http://go.microsoft.com/fwlink/?LinkId=330212).
-- Get a Cognitive Services API key with which to authenticate the SDK's calls. [Sign up here](https://azure.microsoft.com/en-us/services/cognitive-services/spell-check/). You can get a trial key for **free** which will expire after 30 days.
+- If you don't have a Microsoft Azure subscription you can visit [the Microsoft Cognitive Services Web site](https://azure.microsoft.com/free/cognitive-services/), create a new Azure account, and try Cognitive Services for free.
+- Get a Cognitive Services API key with which to authenticate the SDK's calls. [Sign up here](https://azure.microsoft.com/en-us/services/cognitive-services/spell-check/).
 - Set an environment variable named BING_SPELL_CHECK_SUBSCRIPTION_KEY with your Cognitive Services API key in the quickstart.
 
 ### Clone and run
