@@ -20,7 +20,7 @@ This project framework provides examples for the **Bing Visual Search SDK** for 
 
 ### Prerequisites
 
-- A cognitive services API key with which to authenticate the SDK's calls. [Sign up here](https://azure.microsoft.com/en-us/services/cognitive-services/directory/) by navigating to the **Search** services and acquiring a Bing Visual Search API key. You can get a trial key for **free** which will expire after 30 days. BE SURE TO USE THE S9 PRICING TIER FOR THE BING SEARCH V7 API FOR VISUAL SEARCH.
+- A cognitive services API key with which to authenticate the SDK's calls. [Create a new Azure account, and try Cognitive Services for free.](https://azure.microsoft.com/free/cognitive-services/) BE SURE TO USE THE S9 PRICING TIER FOR THE BING SEARCH V7 API FOR VISUAL SEARCH.
 - Maven
 
 ### Quickstart
@@ -38,7 +38,7 @@ To get these samples running locally, simply get the pre-requisites above, then:
 [Bing Visual Search Documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/bing-visual-search/)
 [http://azure.com/java](http://azure.com/java)
 
-If you don't have a Microsoft Azure subscription you can get a FREE trial account [here](http://go.microsoft.com/fwlink/?LinkId=330212)
+If you don't have a Microsoft Azure subscription you can visit [the Microsoft Cognitive Services Web site](https://azure.microsoft.com/free/cognitive-services/), create a new Azure account, and try Cognitive Services for free.
 
 ---
 

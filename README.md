@@ -51,7 +51,7 @@ This project framework provides examples for the following services:
 
 ### Prerequisites
 
-1.  A cognitive services API key and/or endpoint with which to authenticate the SDK's calls. If you don't have an Azure account, [Sign up here](https://azure.microsoft.com/services/cognitive-services/directory/) or follow the [Create a Cognitive Services resource using the Azure portal](https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account?tabs=multiservice%2Cwindows) guide. You can get a trial key for **free** which will expire after 30 days or create a Cognitive Services account on the Azure portal through the *Use with an Azure subscription* button.
+1.  A cognitive services API key and/or endpoint with which to authenticate the SDK's calls. If you don't have an Azure account, you can visit [the Microsoft Cognitive Services Web site](https://azure.microsoft.com/free/cognitive-services/), create a new Azure account, and try Cognitive Services for free. Or follow the [Create a Cognitive Services resource using the Azure portal](https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account?tabs=multiservice%2Cwindows) guide. You can create a Cognitive Services account on the Azure portal through the *Use with an Azure subscription* button.
 2. JDK 7 or 8
 
 > Subscription keys are usually per service. For example, the subscription key for Spell Check will not be the same as it is for Custom Search.
