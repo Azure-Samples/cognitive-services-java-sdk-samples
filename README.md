@@ -26,7 +26,6 @@ This project framework provides examples for the following services:
 
 * **Language Understanding (LUIS)**, using the [Language Understanding SDK](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.cognitiveservices.language.luis.authoring?view=azure-java-stable) for the [LUIS API](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c2f)
 * **Spell Check**, using the [Bing Spell Check SDK](https://docs.microsoft.com/en-us/java/api/overview/azure/cognitiveservices/client/bingspellcheck?view=azure-java-stable) for the [Spell Check API](https://dev.cognitive.microsoft.com/docs/services/5f7d486e04d2430193e1ca8f760cd7ed/operations/57855119bca1df1c647bc358)
-* **Text Analytics**, using the [Text Analytics SDK](https://docs.microsoft.com/en-us/java/api/overview/azure/cognitiveservices/client/textanalytics?view=azure-java-stable) for the [Text Analytics API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7)
 
 ### Search
 
